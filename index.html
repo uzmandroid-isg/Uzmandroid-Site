@@ -483,6 +483,95 @@
             border: 1px solid var(--line);
         }
 
+        .founder {
+            display: grid;
+            grid-template-columns: 0.78fr 1.22fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .founder__visual,
+        .founder__content {
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .founder__visual {
+            padding: 24px;
+            background: linear-gradient(180deg, rgba(20, 33, 61, 0.96), rgba(31, 55, 91, 0.94));
+            color: #fff;
+            display: grid;
+            gap: 18px;
+            align-content: start;
+        }
+
+        .founder__photo {
+            width: min(100%, 320px);
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 22px 34px rgba(0, 0, 0, 0.22);
+        }
+
+        .founder__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder__badge {
+            display: inline-flex;
+            justify-self: start;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 248, 239, 0.92);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+        }
+
+        .founder__visual h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            line-height: 1.1;
+        }
+
+        .founder__visual p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.76);
+            line-height: 1.75;
+        }
+
+        .founder__content {
+            padding: 34px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+        }
+
+        .founder__content h2 {
+            margin: 0 0 16px;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .founder__content p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: 1.02rem;
+        }
+
+        .founder__content p:last-of-type {
+            margin-bottom: 0;
+        }
+
         .quote-card {
             padding: 20px;
             border-radius: 18px;
@@ -574,7 +663,8 @@
 
             .dashboard__top,
             .features,
-            .workflow {
+            .workflow,
+            .founder {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -603,6 +693,7 @@
             .dashboard__top,
             .features,
             .workflow,
+            .founder,
             .contact__box {
                 grid-template-columns: 1fr;
             }
@@ -631,6 +722,7 @@
             </div>
             <nav class="nav">
                 <a href="#urun">Urun</a>
+                <a href="#kimdir">Kimdir</a>
                 <a href="#ozellikler">Ozellikler</a>
                 <a href="#akis">Calisma Akisi</a>
                 <a href="#iletisim">Iletisim</a>
@@ -720,6 +812,43 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="kimdir">
+            <div class="shell founder">
+                <div class="founder__visual">
+                    <span class="founder__badge">Kurucu ve Gelistirici</span>
+                    <div class="founder__photo">
+                        <img src="images/ben.jpeg" alt="Uzmandroid kurucusu ve gelistiricisi">
+                    </div>
+                    <h3>Yuksel</h3>
+                    <p>
+                        2013 yilindan bu yana aktif olarak is guvenligi uzmani olarak gorev yapıyor, ozellikle endustriyel
+                        sahalarda edinilen gercek deneyimi dijital bir yapiya donusturuyorum.
+                    </p>
+                </div>
+
+                <div class="founder__content">
+                    <span class="eyebrow">Kimdir?</span>
+                    <h2>Uzmandroid, sahayi bilen bir uzmanın mesleki birikiminden dogdu.</h2>
+                    <p>
+                        2013 yilindan bu yana is guvenligi uzmani olarak sahada aktif gorev aliyor, ozellikle endustriyel alanlarda
+                        edinilen deneyimi uygulamaya donusturuyorum. Uzmandroid, bu saha birikiminin, mesleki disiplinin ve
+                        is guvenligi sureclerine duyulan sorumlulugun dijital bir yansimasidir.
+                    </p>
+                    <p>
+                        Java ve Visual Basic bilgimi, sahada yillar icinde ortaya cikan ihtiyaclar ve uygulamadaki eksikler ile
+                        birlestirerek; yalnizca calisan bir yazilim degil, is guvenligi uzmanlarinin gercek gereksinimlerini
+                        merkeze alan bir sistem tasarladim. Hedefim; kalite prosedurlerini destekleyen, saglam evrak altyapisi sunan,
+                        yeni uzmanlara yol gosteren ve sahada karar alma surecini guclendiren bir kaynak olusturmaktir.
+                    </p>
+                    <p>
+                        Uzmandroid'i ucretsiz sunma amacim, Turkiye'de is guvenligi uygulamalarina katki saglamak ve meslege deger
+                        katan bir referans urun ortaya koymaktir. Bu calismanin tek bir kisinin bile is kazasindan korunmasina katkisi
+                        olursa, benim icin en degerli sonuc bu olacaktir.
+                    </p>
                 </div>
             </div>
         </section>
