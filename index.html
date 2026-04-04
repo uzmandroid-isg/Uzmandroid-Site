@@ -3,108 +3,875 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzmandroid</title>
-
+    <title>Uzmandroid | Dijital ISG Yonetim Platformu</title>
+    <meta name="description" content="Uzmandroid; saha gozetimi, KKD takibi, kaza analizi ve raporlama sureclerini tek merkezde toplayan dijital is sagligi ve guvenligi platformudur.">
     <style>
+        :root {
+            --bg: #f3f0e8;
+            --surface: rgba(255, 255, 255, 0.82);
+            --surface-strong: #ffffff;
+            --ink: #14213d;
+            --muted: #576074;
+            --line: rgba(20, 33, 61, 0.1);
+            --accent: #d17c2f;
+            --accent-dark: #a85e1d;
+            --accent-soft: #f3d7ba;
+            --navy: #1f375b;
+            --shadow: 0 24px 60px rgba(26, 34, 54, 0.14);
+            --radius-xl: 28px;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --max-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
+            font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(209, 124, 47, 0.18), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(31, 55, 91, 0.16), transparent 32%),
+                linear-gradient(180deg, #f8f5ef 0%, #f3f0e8 52%, #ebe7dd 100%);
         }
 
-        header {
-            background: #1e293b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #334155;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
+        a {
+            color: inherit;
             text-decoration: none;
-            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .shell {
+            width: min(var(--max-width), calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: rgba(248, 245, 239, 0.82);
+            border-bottom: 1px solid rgba(20, 33, 61, 0.07);
+        }
+
+        .site-header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand__name {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .brand__tag {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .nav a:hover {
+            color: var(--ink);
+        }
+
+        .nav__cta {
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: var(--ink);
+            color: #fff;
         }
 
         .hero {
-            padding: 60px 20px;
-            text-align: center;
+            padding: 52px 0 34px;
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .hero__content,
+        .hero__visual {
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow);
+        }
+
+        .hero__content {
+            padding: 54px;
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 244, 0.82)),
+                #fff;
+            border: 1px solid rgba(20, 33, 61, 0.06);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(209, 124, 47, 0.12);
+            color: var(--accent-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 40px;
+            margin: 20px 0 18px;
+            font-size: clamp(2.5rem, 6vw, 4.6rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+            max-width: 11ch;
         }
 
-        .cards {
+        .hero p {
+            margin: 0;
+            max-width: 58ch;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+
+        .hero__actions {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px;
             flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
         }
 
-        .card {
-            background: white;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button--primary {
+            background: linear-gradient(135deg, var(--accent), #e8a35c);
+            color: #fff;
+            box-shadow: 0 16px 28px rgba(209, 124, 47, 0.28);
+        }
+
+        .button--secondary {
+            background: rgba(20, 33, 61, 0.06);
+            color: var(--ink);
+        }
+
+        .hero__stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            min-width: 150px;
+            padding: 16px 18px;
+            border-radius: var(--radius-md);
+            background: rgba(20, 33, 61, 0.04);
+        }
+
+        .stat strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.35rem;
+            color: var(--navy);
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .hero__visual {
+            position: relative;
+            overflow: hidden;
+            padding: 26px;
+            background:
+                linear-gradient(180deg, rgba(31, 55, 91, 0.95), rgba(20, 33, 61, 0.98));
+            color: #fff;
+        }
+
+        .hero__visual::before {
+            content: "";
+            position: absolute;
+            inset: auto -12% -22% auto;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(209, 124, 47, 0.55), transparent 70%);
+        }
+
+        .dashboard {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 18px;
+        }
+
+        .dashboard__top {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 16px;
+        }
+
+        .dashboard__card,
+        .dashboard__metric,
+        .dashboard__list {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 18px;
+        }
+
+        .dashboard__label {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.84rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .dashboard__title {
+            margin: 8px 0 0;
+            font-size: 1.18rem;
+            line-height: 1.4;
+        }
+
+        .dashboard__metric strong {
+            display: block;
+            margin-top: 18px;
+            font-size: 2.2rem;
+        }
+
+        .dashboard__bars {
+            display: grid;
+            gap: 14px;
+        }
+
+        .bar__row {
+            display: grid;
+            gap: 6px;
+        }
+
+        .bar__meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .bar {
+            overflow: hidden;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #f7c787, #d17c2f);
+        }
+
+        .dashboard__list ul {
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .dashboard__list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.86);
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .section {
+            padding: 34px 0;
+        }
+
+        .section__head {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: end;
+            margin-bottom: 24px;
+        }
+
+        .section__head h2 {
+            margin: 0;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .section__head p {
+            margin: 0;
+            max-width: 58ch;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .feature {
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            border: 1px solid rgba(20, 33, 61, 0.08);
+            box-shadow: 0 20px 34px rgba(20, 33, 61, 0.08);
+        }
+
+        .feature__icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, rgba(209, 124, 47, 0.18), rgba(31, 55, 91, 0.12));
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .feature h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .workflow__item {
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            background: var(--surface-strong);
+            border: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow__item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), rgba(31, 55, 91, 0.9));
+        }
+
+        .workflow__step {
+            color: var(--accent-dark);
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .workflow__item h3 {
+            margin: 14px 0 10px;
+            font-size: 1.15rem;
+        }
+
+        .workflow__item p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .highlight {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .highlight__panel,
+        .highlight__quote {
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .highlight__panel {
+            background: linear-gradient(180deg, rgba(20, 33, 61, 0.96), rgba(31, 55, 91, 0.95));
+            color: #fff;
+        }
+
+        .highlight__panel ul {
+            list-style: none;
+            margin: 24px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .highlight__panel li {
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .highlight__quote {
+            background: var(--surface);
+            border: 1px solid var(--line);
+        }
+
+        .quote-card {
             padding: 20px;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(20, 33, 61, 0.08);
         }
 
-        footer {
-            background: #1e293b;
-            color: white;
+        .quote-card + .quote-card {
+            margin-top: 14px;
+        }
+
+        .quote-card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .quote-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .contact {
+            padding-bottom: 58px;
+        }
+
+        .contact__box {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+            padding: 34px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, #fff5e8, #ffffff);
+            border: 1px solid rgba(209, 124, 47, 0.18);
+            box-shadow: var(--shadow);
+        }
+
+        .contact__box h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.05;
+        }
+
+        .contact__box p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 58ch;
+        }
+
+        .contact__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 240px;
+        }
+
+        .site-footer {
+            padding: 18px 0 34px;
+            color: var(--muted);
             text-align: center;
-            padding: 20px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 980px) {
+            .site-header__inner,
+            .section__head,
+            .contact__box,
+            .hero__grid,
+            .highlight {
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+
+            .site-header__inner {
+                gap: 14px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 12px 18px;
+            }
+
+            .hero__content {
+                padding: 34px 24px;
+            }
+
+            .dashboard__top,
+            .features,
+            .workflow {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact__actions {
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .shell {
+                width: min(var(--max-width), calc(100% - 20px));
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 24px;
+            }
+
+            .hero h1 {
+                max-width: none;
+            }
+
+            .dashboard__top,
+            .features,
+            .workflow,
+            .contact__box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__actions,
+            .hero__stats {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .contact__actions {
+                width: 100%;
+            }
         }
     </style>
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="shell site-header__inner">
+            <div class="brand">
+                <span class="brand__name">Uzmandroid</span>
+                <span class="brand__tag">Saha odakli dijital ISG platformu</span>
+            </div>
+            <nav class="nav">
+                <a href="#urun">Urun</a>
+                <a href="#ozellikler">Ozellikler</a>
+                <a href="#akis">Calisma Akisi</a>
+                <a href="#iletisim">Iletisim</a>
+                <a class="nav__cta" href="#iletisim">Demo Talep Et</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <h1>Uzmandroid</h1>
-    <p>İş Güvenliği Yönetim Sistemi</p>
-</header>
+    <main>
+        <section class="hero" id="urun">
+            <div class="shell hero__grid">
+                <div class="hero__content">
+                    <span class="eyebrow">Yakinda Canli Kullanimda</span>
+                    <h1>ISG yonetimini masa basindan sahaya tasiyin.</h1>
+                    <p>
+                        Uzmandroid; saha gozetimi, uygunsuzluk takibi, kaza analizi, KKD yonetimi ve profesyonel raporlamayi
+                        tek merkezde toplayan yeni nesil bir is sagligi ve guvenligi platformudur. Hedefi; daginik surecleri
+                        hizli, izlenebilir ve kurumsal bir yapiya donusturmektir.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="button button--primary" href="#iletisim">Demo ve Iletisim</a>
+                        <a class="button button--secondary" href="#ozellikler">Platformu Incele</a>
+                    </div>
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <strong>Tek Panel</strong>
+                            <span>Denetim, analiz, takvim ve raporlama bir arada</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Hizli Kayit</strong>
+                            <span>Once ve sonra gorselleriyle saha kaydi</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Kurumsal Cikti</strong>
+                            <span>PDF ve PowerPoint formatinda profesyonel raporlar</span>
+                        </div>
+                    </div>
+                </div>
 
-<nav>
-    <a href="#">Ana Sayfa</a>
-    <a href="#">Özellikler</a>
-    <a href="#">Videolar</a>
-    <a href="#">İletişim</a>
-</nav>
+                <div class="hero__visual">
+                    <div class="dashboard">
+                        <div class="dashboard__top">
+                            <div class="dashboard__card">
+                                <div class="dashboard__label">Anlik gorunum</div>
+                                <p class="dashboard__title">Saha uygunsuzluklari, duzeltici faaliyetler ve kapanis surecleri ayni ekranda.</p>
+                            </div>
+                            <div class="dashboard__metric">
+                                <div class="dashboard__label">Aktif denetim</div>
+                                <strong>128</strong>
+                            </div>
+                        </div>
 
-<section class="hero">
-    <h1>İş Güvenliğinde Dijital Dönüşüm</h1>
-    <p>Uzmandroid ile saha denetimlerinizi, risk analizlerinizi ve KKD yönetimini tek platformda yönetin.</p>
-</section>
+                        <div class="dashboard__card">
+                            <div class="dashboard__label">Operasyon panosu</div>
+                            <div class="dashboard__bars">
+                                <div class="bar__row">
+                                    <div class="bar__meta">
+                                        <span>Kapatilan uygunsuzluklar</span>
+                                        <span>%84</span>
+                                    </div>
+                                    <div class="bar"><span style="width:84%"></span></div>
+                                </div>
+                                <div class="bar__row">
+                                    <div class="bar__meta">
+                                        <span>Termin takibi tamamlananlar</span>
+                                        <span>%76</span>
+                                    </div>
+                                    <div class="bar"><span style="width:76%"></span></div>
+                                </div>
+                                <div class="bar__row">
+                                    <div class="bar__meta">
+                                        <span>Raporlanmis saha turu</span>
+                                        <span>%91</span>
+                                    </div>
+                                    <div class="bar"><span style="width:91%"></span></div>
+                                </div>
+                            </div>
+                        </div>
 
-<section class="cards">
-    <div class="card">
-        <h3>Kaza Analizi</h3>
-        <p>5 Neden yöntemi ile kök neden analizi yapın.</p>
-    </div>
+                        <div class="dashboard__list">
+                            <div class="dashboard__label">Odak modulleri</div>
+                            <ul>
+                                <li><span>Saha gozetimi</span><strong>Canli</strong></li>
+                                <li><span>KKD ve zimmet takibi</span><strong>Hazir</strong></li>
+                                <li><span>Kaza analizi ve 5 Neden</span><strong>Hazir</strong></li>
+                                <li><span>Profesyonel raporlama</span><strong>Gelismis</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="card">
-        <h3>KKD Takibi</h3>
-        <p>Zimmet ve stok süreçlerini kolayca yönetin.</p>
-    </div>
+        <section class="section" id="ozellikler">
+            <div class="shell">
+                <div class="section__head">
+                    <div>
+                        <span class="eyebrow">Platformun Omurgasi</span>
+                        <h2>ISG sureclerini hizlandiran temel moduller</h2>
+                    </div>
+                    <p>
+                        Uzmandroid sadece veri depolayan bir panel degil; denetimden kapatmaya, kayittan rapora kadar
+                        tum sureci daha duzenli, izlenebilir ve ekipler tarafindan kolay yonetilebilir hale getiren bir operasyon araci.
+                    </p>
+                </div>
 
-    <div class="card">
-        <h3>Raporlama</h3>
-        <p>PDF çıktılar ile profesyonel raporlar oluşturun.</p>
-    </div>
-</section>
+                <div class="features">
+                    <article class="feature">
+                        <div class="feature__icon">01</div>
+                        <h3>Saha Gozetimi ve Uygunsuzluk Takibi</h3>
+                        <p>Fotograf destekli kayit, risk seviyesi, termin ve durum takibi ile denetim surecini dijital olarak yonetin.</p>
+                    </article>
 
-<footer>
-    <p>© 2026 Uzmandroid</p>
-</footer>
+                    <article class="feature">
+                        <div class="feature__icon">02</div>
+                        <h3>KKD, Zimmet ve Stok Kontrolu</h3>
+                        <p>Calisan bazli zimmet hareketlerini ve ekipman ihtiyacini tek panelde izleyin.</p>
+                    </article>
 
+                    <article class="feature">
+                        <div class="feature__icon">03</div>
+                        <h3>Kaza Analizi ve Kok Neden Yonetimi</h3>
+                        <p>5 Neden ve benzeri analizlerle sadece olayi degil, olayin arkasindaki sebepleri de kayda alin.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon">04</div>
+                        <h3>Kurumsal Raporlama</h3>
+                        <p>PDF ve PowerPoint ciktilariyla yonetim sunumlari, saha raporlari ve duzeltici faaliyet dokumanlarini hazirlayin.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon">05</div>
+                        <h3>Bolum ve Sorumlu Bazli Yapi</h3>
+                        <p>Her kaydi isyeri, bolum ve sorumlu baglaminda takip ederek sahadaki daiginikligi azaltin.</p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature__icon">06</div>
+                        <h3>Yonetici Icin Net Gorunurluk</h3>
+                        <p>Hangi uygunsuzluk acik, hangisi kapandi, hangi faaliyet gecikiyor gibi sorulara hizli cevap alin.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="akis">
+            <div class="shell">
+                <div class="section__head">
+                    <div>
+                        <span class="eyebrow">Calisma Akisi</span>
+                        <h2>Sahadan ciktiğa uzanan net bir operasyon zinciri</h2>
+                    </div>
+                    <p>
+                        Uzmandroid’in en guclu yani; kayit ekranlarini tek tek degil, tum operasyon akisiyla birlikte dusunmesidir.
+                        Boylece kullanici sadece form doldurmaz; surecin neresinde oldugunu da bilir.
+                    </p>
+                </div>
+
+                <div class="workflow">
+                    <article class="workflow__item">
+                        <div class="workflow__step">Adim 1</div>
+                        <h3>Tespit</h3>
+                        <p>Tehlike, risk ve gorsel kayitlari sahada hizli sekilde olusturulur.</p>
+                    </article>
+
+                    <article class="workflow__item">
+                        <div class="workflow__step">Adim 2</div>
+                        <h3>Atama</h3>
+                        <p>Bolum, sorumlu ve termin baglantisi kurularak aksiyon sahiplenilir.</p>
+                    </article>
+
+                    <article class="workflow__item">
+                        <div class="workflow__step">Adim 3</div>
+                        <h3>Kapatma</h3>
+                        <p>Gerceklesen faaliyet ve sonrasi gorsel ile kapatma sureci belgelenir.</p>
+                    </article>
+
+                    <article class="workflow__item">
+                        <div class="workflow__step">Adim 4</div>
+                        <h3>Raporlama</h3>
+                        <p>Yonetim, saha ve denetim ihtiyacina uygun profesyonel ciktılar uretilir.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="shell highlight">
+                <div class="highlight__panel">
+                    <span class="eyebrow">Neden Uzmandroid</span>
+                    <h2>Yazilimdan once sureci duzenleyen bir platform</h2>
+                    <ul>
+                        <li>WinForms kokenli saha tecrubesinden gelen ekran mantigi</li>
+                        <li>Gercek operasyon akislari icin tasarlanmis kayit yapisi</li>
+                        <li>Gorsel destekli uygunsuzluk ve kapatma mantigi</li>
+                        <li>Yonetim sunumlarina uygun cikti kalitesi</li>
+                    </ul>
+                </div>
+
+                <div class="highlight__quote">
+                    <div class="quote-card">
+                        <strong>Dağinik kayitlar yerine tek akıs</strong>
+                        <p>Excel, WhatsApp ve farkli dosyalara yayilan saha bilgisini tek panelde toplar.</p>
+                    </div>
+                    <div class="quote-card">
+                        <strong>Form degil, operasyon araci</strong>
+                        <p>Kullanici yalnizca veri girmez; hangi kaydin acik, kapali veya gecikmis oldugunu net gorur.</p>
+                    </div>
+                    <div class="quote-card">
+                        <strong>Sunuma hazir ciktı</strong>
+                        <p>Ozellikle once-sonra raporlari ve kurumsal PDF ciktilari yonetim sunumlarina uygun duzende uretilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="iletisim">
+            <div class="shell">
+                <div class="contact__box">
+                    <div>
+                        <span class="eyebrow">Iletisim ve Demo</span>
+                        <h2>Uzmandroid’i kendi operasyonunuza uyarlamak ister misiniz?</h2>
+                        <p>
+                            Demo talebi, urun sunumu, isbirligi veya geri bildirim icin iletisime gecebilirsiniz.
+                            Platform su anda aktif gelistirme surecindedir ve kurumsal kullanim senaryolarina gore sekillenmektedir.
+                        </p>
+                    </div>
+                    <div class="contact__actions">
+                        <a class="button button--primary" href="mailto:iletisim@uzmandroid.com">E-posta Gonder</a>
+                        <a class="button button--secondary" href="https://yuks3l1903.github.io/Uzmandroid-Site/" target="_blank" rel="noreferrer">Canli Sayfayi Ac</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <p>© 2026 Uzmandroid. Dijital ISG surecleri icin gelistirilen operasyon platformu.</p>
+        </div>
+    </footer>
 </body>
 </html>
