@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uzmandroid | Dijital İSG Yönetim Platformu</title>
-    <meta name="description" content="Uzmandroid; saha gözetimi, uygunsuzluk takibi, KKD yönetimi, kaza analizi ve profesyonel raporlamayı tek merkezde buluşturan dijital İSG yönetim platformudur.">
+    <meta name="description" content="Uzmandroid; saha gözetimi, uygunsuzluk takibi, eğitim, kurul, KKD, iş kazası analizi, MySQL tabanlı kayıt ve profesyonel raporlamayı tek merkezde buluşturan masaüstü İSG yönetim platformudur.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -187,6 +187,22 @@
         }
         .feature h3 { margin: 0 0 10px; font-size: 1.16rem; line-height: 1.45; }
         .feature p { margin: 0; color: var(--muted); line-height: 1.78; }
+        .feature ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: 0.94rem; line-height: 1.55; }
+        .feature li { position: relative; padding-left: 18px; }
+        .feature li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+        .module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        .module-card {
+            padding: 26px;
+            border-radius: var(--radius-lg);
+            background: var(--paper-strong);
+            border: 1px solid var(--line);
+            box-shadow: 0 18px 34px rgba(17, 32, 51, 0.08);
+        }
+        .module-card h3 { margin: 0 0 10px; font-size: 1.22rem; }
+        .module-card p { margin: 0; color: var(--muted); line-height: 1.75; }
+        .module-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .module-card__tags span { padding: 8px 10px; border-radius: 999px; background: rgba(199,119,43,0.1); color: var(--accent-deep); font-size: 0.82rem; font-weight: 800; }
 
         .workflow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
         .workflow__item { position: relative; overflow: hidden; padding: 24px; background: var(--paper-strong); }
@@ -248,7 +264,7 @@
 
         @media (max-width: 980px) {
             .hero__grid, .proof, .highlight, .founder, .contact__box, .section__head { grid-template-columns: 1fr; display: grid; }
-            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid { grid-template-columns: 1fr 1fr; }
+            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid, .module-grid { grid-template-columns: 1fr 1fr; }
             .hero__content { padding: 36px 26px; }
         }
 
@@ -256,7 +272,7 @@
             .nav { display: none; }
             .hero { padding-top: 26px; }
             .hero h1 { max-width: none; }
-            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid { grid-template-columns: 1fr; }
+            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid, .module-grid { grid-template-columns: 1fr; }
             .hero__actions { flex-direction: column; }
             .button, .contact__actions { width: 100%; }
             .contact__actions { min-width: 0; }
@@ -274,6 +290,7 @@
                 <a href="#urun">Ürün</a>
                 <a href="#yaklasim">Yaklaşım</a>
                 <a href="#ozellikler">Özellikler</a>
+                <a href="#kapsam">Kapsam</a>
                 <a href="#kurucu">Kurucu</a>
                 <a href="#iletisim">İletişim</a>
                 <a class="nav__cta" href="#iletisim">Son sürümü indir</a>
@@ -285,18 +302,18 @@
         <section class="hero" id="urun">
             <div class="shell hero__grid">
                 <div class="hero__content">
-                    <span class="eyebrow">Yakında canlı kullanımda</span>
+                    <span class="eyebrow">Portable masaüstü İSG uygulaması</span>
                     <h1>İSG yönetimini sadeleştiren güçlü bir saha platformu.</h1>
-                    <p class="hero__lead">İSO 45001 kriterleri gözetilerek tasarımlanan Uzmandroid; saha gözetimi, uygunsuzluk takibi, kaza analizi, KKD yönetimi ve profesyonel raporlamayı tek merkezde toplayan dijital iş sağlığı ve güvenliği platformudur.</p>
-                    <p class="hero__mini">Amaç; dağınık kayıtları toplamak değil, sahadaki iş güvenliği uzmanına karar hızını, görünürlüğü ve düzeni geri kazandırmaktır.</p>
+                    <p class="hero__lead">Uzmandroid; saha gözetimi, uygunsuzluk takibi, düzeltici faaliyetler, iş kazası analizi, eğitim, kurul, KKD, çalışan kayıtları ve profesyonel raporlamayı tek merkezde buluşturan MySQL tabanlı masaüstü İSG yönetim platformudur.</p>
+                    <p class="hero__mini">Amaç; dağınık Excel dosyalarını, unutulan terminleri ve klasörlere yayılan kayıtları azaltarak iş güvenliği uzmanına sahadan rapora uzanan düzenli bir çalışma hattı kazandırmaktır.</p>
                     <div class="hero__actions">
                         <a class="button button--primary" href="#iletisim">Son sürümü indir</a>
                         <a class="button button--secondary" href="#ozellikler">Modülleri incele</a>
                     </div>
                     <div class="hero__stats">
-                        <div class="stat"><strong>Tek merkez</strong><span>Denetim, takip, analiz ve çıktı süreçleri aynı yapıda çalışır.</span></div>
-                        <div class="stat"><strong>Sade kullanım</strong><span>Gereksiz karmaşa yerine sahada hızlı işlem mantığı öne çıkar.</span></div>
-                        <div class="stat"><strong>Etkili çıktı</strong><span>PDF ve PowerPoint raporları yönetim sunumuna hazır üretilir.</span></div>
+                        <div class="stat"><strong>Tek merkez</strong><span>Denetim, eğitim, kurul, KKD ve kaza süreçleri aynı veri düzeninde çalışır.</span></div>
+                        <div class="stat"><strong>MySQL altyapı</strong><span>Yerel bilgisayar veya ortak sunucu senaryosuna uygun kayıt yapısı sunar.</span></div>
+                        <div class="stat"><strong>Etkili çıktı</strong><span>PDF, Excel ve rapor akışları yönetim ve denetim kullanımına hazırlanır.</span></div>
                     </div>
                 </div>
 
@@ -325,10 +342,11 @@
                         <div class="dashboard__list">
                             <div class="dashboard__label">Temel modüller</div>
                             <ul>
-                                <li><span>Saha gözetimi</span><strong>Hazır</strong></li>                                
+                                <li><span>Saha gözetimi</span><strong>Hazır</strong></li>
+                                <li><span>Eğitim, sertifika ve imza föyü</span><strong>Hazır</strong></li>
+                                <li><span>Kurul, gündem ve tutanak</span><strong>Hazır</strong></li>
+                                <li><span>KKD ve zimmet takibi</span><strong>Hazır</strong></li>
                                 <li><span>Kaza analizi ve 5 Neden</span><strong>Hazır</strong></li>
-                                <li><span>Kurumsal raporlama</span><strong>Gelişmiş</strong></li>
-				<li><span>KKD ve zimmet takibi</span><strong>Hazır</strong></li>
                             </ul>
                         </div>
 
@@ -344,22 +362,22 @@
                         <span class="eyebrow">Temel yaklaşım</span>
                         <h2>Basit görünen ama sahada güçlü çalışan bir sistem</h2>
                     </div>
-                    <p>Uzmandroid; kalabalık ekranlar, dallanıp giden modüller, gereksiz menüler ve dağınık veri akışı yerine, iş güvenliği uzmanının günlük çalışma mantığına yakın bir düzen sunar.</p>
+                    <p>Uzmandroid; kalabalık evrak akışı, ayrı ayrı tutulan Excel listeleri, unutulan aksiyonlar ve dağınık klasör düzeni yerine, iş güvenliği uzmanının günlük çalışma mantığına yakın bir operasyon düzeni sunar.</p>
                 </div>
 
                 <div class="proof">
                     <article class="proof__card">
                         <span class="eyebrow">Neyi çözer?</span>
-                        <h3>Excel, WhatsApp, klasör ve dağınık not akışını tek bir operasyon hattına dönüştürür.</h3>
-                        <p>Denetim kaydı, sorumlu atama, kapanış görseli, rapor çıktısı ve geçmiş kayıt takibi aynı mantık içinde ilerlediği için kullanıcı sürecin neresinde olduğunu sürekli bilir.</p>
+                        <h3>Excel, WhatsApp, klasör ve dağınık not akışını izlenebilir bir İSG operasyon hattına dönüştürür.</h3>
+                        <p>İşyeri, bölüm, çalışan, uygunsuzluk, faaliyet, eğitim, kurul, KKD ve kaza bilgileri aynı veri mantığında ilerlediği için kullanıcı hangi işin açık, hangisinin kapalı, hangisinin rapora hazır olduğunu daha net görür.</p>
                     </article>
 
                     <div class="proof__grid">
                         <article><strong>Hızlı kayıt</strong><p>Sahada ihtiyaç duyulan bilgiler önceliklendirilir; kullanıcı form içinde kaybolmaz.</p></article>
-                        <article><strong>Yerel güvenlik</strong><p>Veriler internet tabanlı bir sisteme bağımlı olmadan, kullanıcı kontrolünde çalışır.</p></article>
-                        <article><strong>Sunuma hazır yapı</strong><p>Raporlar yalnızca çıktı değil, yönetim diliyle paylaşılabilir profesyonel belge üretir.</p></article>
+                        <article><strong>Yerel veya ortak sunucu</strong><p>Veriler MySQL üzerinde tutulur; tek bilgisayar veya ortak sunucu kullanımı için uygun yapı sunar.</p></article>
+                        <article><strong>Sunuma hazır çıktı</strong><p>PDF, Excel ve rapor çıktıları yalnızca arşiv değil, yönetim ve denetim diliyle paylaşılabilir belge üretir.</p></article>
                         <article><strong>Gerçek ihtiyaç odaklı</strong><p>Modüller teorik değil, sahada tekrar eden mesleki ihtiyaçlardan doğmuştur.</p></article>
-                        <article><strong>Bölüm Güvenlik İndeksi</strong><p>Fine Kinney mantığıyla ölçülen tehlikeler üzerinden her bölüm için otomatik güvenlik indeksi üretir; gelişimi izlemeyi ve öncelikleri görmeyi kolaylaştırır.</p></article>
+                        <article><strong>Lisans ve sürdürülebilirlik</strong><p>Deneme, çevrimdışı özel lisans ve ileride paket bazlı kullanım kısıtları için altyapı barındırır.</p></article>
                     </div>
                 </div>
             </div>
@@ -372,18 +390,57 @@
                         <span class="eyebrow">Platformun omurgası</span>
                         <h2>İSG süreçlerini hızlandıran temel modüller</h2>
                     </div>
-                    <p>Uzmandroid, yalnızca veri depolayan bir panel değil; denetimden kapatmaya, kayıttan rapora kadar tüm süreci daha düzenli ve izlenebilir hale getiren bir çalışma aracıdır.</p>
+                    <p>Uzmandroid, yalnızca veri depolayan bir panel değil; işyerinden çalışana, saha tespitinden rapora, eğitimden kurul kararına kadar İSG sürecini daha düzenli ve izlenebilir hale getiren bir çalışma aracıdır.</p>
                 </div>
 
                 <div class="features">
-                    <article class="feature"><div class="feature__icon">01</div><h3>Saha gözetimi ve uygunsuzluk takibi</h3><p>Fotoğraf destekli kayıt, risk seviyesi, termin ve durum akışı ile denetim sürecini dijital olarak yönetir.</p></article>
-                    <article class="feature"><div class="feature__icon">02</div><h3>KKD, zimmet ve stok yönetimi</h3><p>Sahada çoğu zaman uzmanların üstlenmek zorunda kaldığı KKD süreçlerini daha kontrollü ve izlenebilir hale getirir.</p></article>
-                    <article class="feature"><div class="feature__icon">03</div><h3>Kaza analizi ve kök neden yaklaşımı</h3><p>5 Neden gibi analiz mantıklarıyla yalnızca olayı değil, olayın arkasındaki sebepleri de kayıt altına alır.</p></article>
-                    <article class="feature"><div class="feature__icon">04</div><h3>Kurumsal raporlama</h3><p>PDF ve PowerPoint çıktılarıyla yönetime sunulabilir, düzenli ve görsel olarak güçlü raporlar üretir.</p></article>
-                    <article class="feature"><div class="feature__icon">05</div><h3>Bölüm ve sorumlu bazlı yapı</h3><p>Her kayıt işyeri, bölüm ve sorumlu bağlamında takip edildiği için dağınık süreçler sadeleşir.</p></article>
-                    <article class="feature"><div class="feature__icon">06</div><h3>Yönetici için net görünürlük</h3><p>Hangi kayıt açık, hangisi kapatılmış, hangisi gecikmiş gibi sorulara hızlı ve net cevap sunar.</p></article>
-                    <article class="feature"><div class="feature__icon">07</div><h3>Bölüm Güvenlik İndeksi</h3><p>Fine Kinney yöntemiyle değerlendirilen tehlikeleri bölüm bazında ölçerek otomatik güvenlik indeksleri üretir; sahadaki gelişimi sayısal olarak izlenebilir hale getirir.</p></article>
-                    <article class="feature"><div class="feature__icon">08</div><h3>Gelişim ve kıyas takibi</h3><p>Bölümler arasındaki risk yoğunluğunu, iyileşme eğilimini ve öncelik sırasını görünür kılar; saha yönetimini sezgiden veriye taşır.</p></article>
+                    <article class="feature"><div class="feature__icon">01</div><h3>İşyeri, bölüm ve çalışan yönetimi</h3><p>İSG kayıtlarının temelini oluşturan işyeri, bölüm, unvan ve çalışan bilgilerini düzenli bir yapıda toplar.</p><ul><li>Çalışan kayıtları</li><li>Bölüm ve unvan tanımları</li><li>Toplu çalışan ekleme desteği</li></ul></article>
+                    <article class="feature"><div class="feature__icon">02</div><h3>Saha gözetimi ve uygunsuzluk takibi</h3><p>Sahada tespit edilen uygunsuzlukları kayıt, durum, kapanış ve rapor mantığıyla izlenebilir hale getirir.</p><ul><li>Açık ve kapalı kayıt takibi</li><li>Termin ve sorumlu bağlantısı</li><li>Saha gözetim istatistikleri</li></ul></article>
+                    <article class="feature"><div class="feature__icon">03</div><h3>Düzeltici faaliyet ve aksiyon yönetimi</h3><p>Tespit edilen sorunların yalnızca kaydedilmesini değil, planlanmasını, izlenmesini ve sonuçlandırılmasını destekler.</p><ul><li>Faaliyet planları</li><li>Hareket ve açıklama geçmişi</li><li>Oncesi-sonrası rapor yaklaşımı</li></ul></article>
+                    <article class="feature"><div class="feature__icon">04</div><h3>İş kazası kayıt ve analiz süreçleri</h3><p>İş kazası sonrası kayıt, arşiv, istatistik ve kök neden analizini daha sistemli hale getirir.</p><ul><li>Kaza arşivi</li><li>5 Neden analizi</li><li>Kaza bilgi ve analiz raporları</li></ul></article>
+                    <article class="feature"><div class="feature__icon">05</div><h3>Eğitim, sertifika ve imza föyü</h3><p>İSG eğitim konularından katılımcı listesine, eğitim süresinden sertifika ve imza föyüne kadar eğitim akışını destekler.</p><ul><li>Eğitim konu ağacı</li><li>Sertifika oluşturma</li><li>İmza föyü ve eğitim arşivi</li></ul></article>
+                    <article class="feature"><div class="feature__icon">06</div><h3>İSG kurul, gündem ve tutanak yönetimi</h3><p>Kurul toplantılarının gündem, katılımcı, karar ve tutanak süreçlerini tekrar kullanılabilir bir düzene taşır.</p><ul><li>Gündem havuzu</li><li>Toplantı kararları</li><li>Kurul tutanak çıktıları</li></ul></article>
+                    <article class="feature"><div class="feature__icon">07</div><h3>KKD, zimmet ve stok yönetimi</h3><p>Çalışanlara verilen KKD kayıtlarını, teslim-iade süreçlerini ve unvana göre KKD gereksinimlerini izlenebilir hale getirir.</p><ul><li>KKD envanteri</li><li>Çalışan zimmetleri</li><li>İade, stok ve hurda takibi</li></ul></article>
+                    <article class="feature"><div class="feature__icon">08</div><h3>Risk, tehlike ve bölüm güvenlik indeksi</h3><p>Tehlike kategorileri, risk değerlendirmesi ve Fine Kinney yaklaşımıyla bölüm bazlı gelişimi ölçülebilir kılar.</p><ul><li>Tehlike havuzu</li><li>Risk değerlendirmesi</li><li>Bölüm bazlı güvenlik görünümü</li></ul></article>
+                    <article class="feature"><div class="feature__icon">09</div><h3>Mesleki belge ve talimat takibi</h3><p>Çalışan belgeleri, talimat süreçleri ve standart doküman akışları için daha düzenli bir takip zemini sunar.</p><ul><li>Mesleki belge kayıtları</li><li>Talimat modülü</li><li>Çalışan bazlı arşiv</li></ul></article>
+                    <article class="feature"><div class="feature__icon">10</div><h3>PDF, Excel ve denetim çıktıları</h3><p>Kayıtları uygulama içinde bırakmaz; gerektiğinde yönetim, denetim ve arşiv için paylaşılabilir çıktılara dönüştürür.</p><ul><li>PDF raporlar</li><li>Excel veri aktarımı</li><li>Sertifika ve zimmet çıktıları</li></ul></article>
+                    <article class="feature"><div class="feature__icon">11</div><h3>MySQL, yedekleme ve ortak sunucu</h3><p>Verileri MySQL üzerinde tutarak tek bilgisayar, ortak sunucu ve çok kullanıcılı çalışma senaryolarına zemin hazırlar.</p><ul><li>İlk kurulum desteği</li><li>SQL yedek alma</li><li>Ortak sunucuya taşıma akışı</li></ul></article>
+                    <article class="feature"><div class="feature__icon">12</div><h3>Lisans, deneme ve çevrimdışı kullanım</h3><p>6 aylık deneme lisansı, Firebase doğrulama ve özel durumlar için çevrimdışı lisans yaklaşımıyla sürdürülebilir kullanım modeli sunar.</p><ul><li>6 ay ücretsiz deneme</li><li>Offline lisans dosyası</li><li>Kullanıcı hakkı yönetimi</li></ul></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="kapsam">
+            <div class="shell">
+                <div class="section__head">
+                    <div>
+                        <span class="eyebrow">Kapsamlı İSG aracı</span>
+                        <h2>Uzmanın günlük işini parçalara değil, bütün bir akışa bağlar</h2>
+                    </div>
+                    <p>Uzmandroid’in hedefi, ayrı ayrı ekranlar sunmaktan çok iş güvenliği uzmanının sahada başlayan işini rapor, arşiv ve takip düzenine kadar taşımaktır.</p>
+                </div>
+
+                <div class="module-grid">
+                    <article class="module-card">
+                        <h3>Saha ve faaliyet omurgası</h3>
+                        <p>Uygunsuzluk tespiti, düzeltici faaliyet, kapanış, istatistik ve raporlama aynı operasyon çizgisi içinde ilerler. Böylece açık işler, geciken aksiyonlar ve tamamlanan kayıtlar daha görünür olur.</p>
+                        <div class="module-card__tags"><span>Saha gözetimi</span><span>Düzeltici faaliyet</span><span>Kapatma</span><span>Raporlama</span></div>
+                    </article>
+                    <article class="module-card">
+                        <h3>Eğitim ve kurul disiplini</h3>
+                        <p>Eğitim konu ağacı, imza föyü, sertifika, kurul gündemi, toplantı kararı ve tutanak akışları uzmanı tekrar eden evrak yükünden kurtarmaya yardımcı olur.</p>
+                        <div class="module-card__tags"><span>Eğitim</span><span>Sertifika</span><span>İmza föyü</span><span>Kurul tutanağı</span></div>
+                    </article>
+                    <article class="module-card">
+                        <h3>Çalışan bazlı izlenebilirlik</h3>
+                        <p>Çalışan kayıtları; KKD, belge, eğitim, talimat ve işyeri/bölüm ilişkileriyle birlikte düşünülür. Bu sayede kayıtlar yalnızca listede kalmaz, çalışan geçmişinin parçası olur.</p>
+                        <div class="module-card__tags"><span>Çalışan</span><span>KKD</span><span>Belge</span><span>Talimat</span></div>
+                    </article>
+                    <article class="module-card">
+                        <h3>Kurulum ve veri güvenliği yaklaşımı</h3>
+                        <p>Portable kullanım, MySQL tabanlı veri yapısı, yerel veya ortak sunucu bağlantısı, SQL yedekleme ve lisans altyapısı ile uygulama kişisel kullanım kadar kurumsal kullanıma da hazırlanır.</p>
+                        <div class="module-card__tags"><span>Portable</span><span>MySQL</span><span>Yedekleme</span><span>Lisans</span></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -395,14 +452,14 @@
                         <span class="eyebrow">Çalışma akışı</span>
                         <h2>Sahadan çıktıya uzanan net bir operasyon zinciri</h2>
                     </div>
-                    <p>Uzmandroid’in güçlü yanı, ekranları tek tek düşünmek yerine tüm süreci birbirine bağlı bir yapı olarak kurgulamasıdır.</p>
+                    <p>Uzmandroid’in güçlü yanı, ekranları tek tek düşünmek yerine kurulumdan ilk kayda, sahadan çıktıya ve yedeklemeye kadar tüm süreci birbirine bağlı bir yapı olarak kurgulamasıdır.</p>
                 </div>
 
                 <div class="workflow">
-                    <article class="workflow__item"><div class="workflow__step">Adım 1</div><h3>Tespit</h3><p>Tehlike, risk ve görsel kayıtlar sahada hızlı şekilde oluşturulur.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 2</div><h3>Atama</h3><p>Bölüm, sorumlu ve termin bağlantısı kurularak aksiyon sahiplenilir.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 3</div><h3>Kapatma</h3><p>Gerçekleşen faaliyet ve sonrası görsel ile kapanış süreci belgelenir.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 4</div><h3>Raporlama</h3><p>Yönetim, saha ve denetim ihtiyaçlarına uygun profesyonel çıktılar üretilir.</p></article>
+                    <article class="workflow__item"><div class="workflow__step">Adım 1</div><h3>Kurulum</h3><p>Portable paket çalıştırılır; veriler bu bilgisayarda mı yoksa ortak sunucuda mı tutulacak seçilir.</p></article>
+                    <article class="workflow__item"><div class="workflow__step">Adım 2</div><h3>Temel kayıtlar</h3><p>İşyeri, bölüm, unvan, çalışan ve ilk yönetici bilgileriyle sistemin omurgası oluşturulur.</p></article>
+                    <article class="workflow__item"><div class="workflow__step">Adım 3</div><h3>Operasyon</h3><p>Saha gözetimi, eğitim, kurul, KKD, faaliyet ve kaza kayıtları aynı düzen içinde yönetilir.</p></article>
+                    <article class="workflow__item"><div class="workflow__step">Adım 4</div><h3>Rapor ve yedek</h3><p>PDF, Excel ve SQL yedek akışlarıyla kayıtlar denetime, yönetime ve arşive hazır hale getirilir.</p></article>
                 </div>
             </div>
         </section>
@@ -417,6 +474,7 @@
                         <li>Gerçek saha pratiğinden beslenen ekran mantığı</li>
                         <li>Görsel destekli uygunsuzluk ve kapatma düzeni</li>
                         <li>Yönetim sunumlarına uygun çıktı kalitesi</li>
+                        <li>MySQL tabanlı yerel ve ortak sunucu kullanım yaklaşımı</li>
                         <li>Yeni uzmanlar için rehber niteliğinde düzen</li>
                     </ul>
                 </div>
@@ -426,6 +484,7 @@
                     <div class="quote-card"><strong>Form değil, operasyon aracı</strong><p>Kullanıcı yalnızca veri girmez; açık, kapalı ve gecikmiş süreçleri aynı anda görür.</p></div>
                     <div class="quote-card"><strong>Sade ama etkili</strong><p>Görsel yük oluşturmayan yalın tasarım, çıktıda ise güçlü ve profesyonel bir iz bırakır.</p></div>
                     <div class="quote-card"><strong>Ölçülebilir bölüm güvenliği</strong><p>Bölüm Güvenlik İndeksi yaklaşımı, Fine Kinney ile değerlendirilen tehlikeleri puanlayarak hangi bölümün ne ölçüde geliştiğini somut biçimde izlemeyi mümkün kılar.</p></div>
+                    <div class="quote-card"><strong>İnternete bağımlı olmayan çalışma</strong><p>Uygulama MySQL veritabanı ile çalışır; lisans ve güncelleme dışında temel kayıt akışı yerel veya ortak sunucu üzerinde sürdürülebilir.</p></div>
                 </div>
             </div>
         </section>
@@ -448,11 +507,20 @@
                     <p>Meslek hayatı boyunca OSGB yapısı içinde ve çeşitli kurumlarda; hastane ve sağlık, inşaat, HES, telekom, ahşap ürünleri, makine, çelik konstrüksiyon, yapı malzemeleri ve açık hava taş ocakları gibi farklı risk profillerine sahip sektörlerde görev almıştır. Bu süreçte risk yönetimi, iç tetkik ve kalite bakışı konularında deneyim kazanmıştır.</p>
                     <p>Java, Kotlin, Visual Basic ve MySQL bilgisi ile Almanca dil yetkinliğini bir araya getirerek, sahada karşılaşılan ihtiyaçlara daha pratik çözümler üretmeye odaklanmaktadır. Uzmandroid de bu yaklaşımın bir sonucu olarak ortaya çıkmıştır.</p><p>Halen ÜNYE MADEN'de görevine devam etmekte; iş güvenliği uzmanlığı ile yazılım geliştirme alanındaki ilgisini birlikte sürdürmektedir.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="contact" id="iletisim">
+            <div class="shell contact__box">
+                <div>
+                    <span class="eyebrow">Deneyin ve geri bildirim verin</span>
+                    <h2>Uzmandroid’i indirip kendi İSG akışınızda test edin</h2>
+                    <p>Son sürüm GitHub Releases sayfasında yayınlanır. Genel kullanım için Assets bölümündeki portable `.zip` paketini indirin; Source code dosyaları geliştirici kaynak paketidir. İlk çalıştırmada uygulama MySQL bağlantısı, lisans ve temel kurulum adımlarında sizi yönlendirir.</p>
+                </div>
                 <div class="contact__actions">
                     <a class="button button--primary" href="https://github.com/uzmandroid-isg/Uzmandroid-igu/releases" target="_blank" rel="noreferrer">Son sürümü indir</a>
-                    <a class="button button--secondary" href="mailto:iletisim@uzmandroid.com">E-posta gonder</a>
-                    <p class="contact__note">Son surum GitHub Releases sayfasinda yayinlanir. Kurulum icin yalnizca Assets altindaki .zip dosyasini indirin; Source code dosyalarini secmeyin.</p>
-                </div>
+                    <a class="button button--secondary" href="mailto:iletisim@uzmandroid.com">Geri bildirim gönder</a>
+                    <p class="contact__note">Öneri, hata bildirimi ve saha deneyimi paylaşımları geliştirme sürecini doğrudan güçlendirir.</p>
                 </div>
             </div>
         </section>
