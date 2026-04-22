@@ -148,17 +148,24 @@
         }
 
         .dashboard { position: relative; z-index: 1; display: grid; gap: 16px; }
-        .dashboard__row { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 16px; }
-        .dashboard__card, .dashboard__metric, .dashboard__list, .dashboard__quote {
+        .dashboard__logo-card, .dashboard__list, .dashboard__quote {
             padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
         }
+        .dashboard__logo-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+            padding: 28px;
+            background: radial-gradient(circle at 50% 35%, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+        }
+        .dashboard__logo-card img {
+            width: min(100%, 420px);
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.22));
+        }
         .dashboard__label { color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-        .dashboard__title { margin: 10px 0 0; font-size: 1.14rem; line-height: 1.5; }
-        .dashboard__metric strong { display: block; margin-top: 18px; font-size: 2.3rem; }
-        .dashboard__bars { display: grid; gap: 14px; }
-        .bar__meta { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px; color: rgba(255,255,255,0.78); font-size: 0.92rem; }
-        .bar { height: 10px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,0.1); }
-        .bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #f4ca92, #c7772b); }
         .dashboard__list ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
         .dashboard__list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.88); }
         .dashboard__quote { color: rgba(255,255,255,0.84); line-height: 1.8; }
@@ -319,24 +326,8 @@
 
                 <div class="hero__panel">
                     <div class="dashboard">
-                        <div class="dashboard__row">
-                            <div class="dashboard__card">
-                                <div class="dashboard__label">Operasyon görünümü</div>
-                                <p class="dashboard__title">Açık kayıtlar, kapatma akışları, terminler ve saha hareketleri tek panelde izlenir.</p>
-                            </div>
-                            <div class="dashboard__metric">
-                                <div class="dashboard__label">Aktif denetim</div>
-                                <strong>128</strong>
-                            </div>
-                        </div>
-
-                        <div class="dashboard__card">
-                            <div class="dashboard__label">Canlı durum özeti</div>
-                            <div class="dashboard__bars">
-                                <div><div class="bar__meta"><span>Kapatılan uygunsuzluklar</span><span>%84</span></div><div class="bar"><span style="width:84%"></span></div></div>
-                                <div><div class="bar__meta"><span>Termin takibi tamamlananlar</span><span>%76</span></div><div class="bar"><span style="width:76%"></span></div></div>
-                                <div><div class="bar__meta"><span>Raporlanan saha turu</span><span>%91</span></div><div class="bar"><span style="width:91%"></span></div></div>
-                            </div>
+                        <div class="dashboard__logo-card">
+                            <img src="uzmandroid_logo.png" alt="Uzmandroid logo">
                         </div>
 
                         <div class="dashboard__list">
@@ -534,6 +525,7 @@
 </body>
 
 </html>
+
 
 
 
