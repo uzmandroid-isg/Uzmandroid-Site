@@ -61,7 +61,17 @@
             padding: 18px 0;
         }
 
-        .brand { display: flex; flex-direction: column; gap: 3px; }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand__mark {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            border: 1px solid rgba(230, 237, 248, 0.16);
+            object-fit: cover;
+            background: #0a1119;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+        }
+        .brand__text { display: flex; flex-direction: column; gap: 3px; }
         .brand__name { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
         .brand__tag { font-size: 0.92rem; color: var(--muted); }
 
@@ -279,6 +289,9 @@
             .nav { display: none; }
             .hero { padding-top: 26px; }
             .hero h1 { max-width: none; }
+            .brand__mark { width: 44px; height: 44px; border-radius: 10px; }
+            .brand__name { font-size: 1.08rem; }
+            .brand__tag { font-size: 0.84rem; }
             .dashboard__row, .features, .workflow, .hero__stats, .proof__grid, .module-grid { grid-template-columns: 1fr; }
             .hero__actions { flex-direction: column; }
             .button, .contact__actions { width: 100%; }
@@ -290,8 +303,11 @@
     <header class="site-header">
         <div class="shell site-header__inner">
             <div class="brand">
-                <span class="brand__name">Uzmandroid</span>
-                <span class="brand__tag">Saha odaklı dijital İSG yönetim platformu</span>
+                <img class="brand__mark" src="uzmandroid_logo.png" alt="Uzmandroid logosu">
+                <div class="brand__text">
+                    <span class="brand__name">Uzmandroid</span>
+                    <span class="brand__tag">Saha odaklı dijital İSG yönetim platformu</span>
+                </div>
             </div>
             <nav class="nav">
                 <a href="#urun">Ürün</a>
@@ -494,9 +510,11 @@
                <div class="founder__content">
                     <span class="eyebrow">Kimdir?</span>
                     <h2>Sahadan gelen birikimi yazılıma dönüştüren profesyonel bir yaklaşım</h2>
-                    <p>1972 yılında Frankfurt, Almanya'da doğan Yüksel Karabulut; A Sınıfı İş Güvenliği Uzmanı olarak farklı sektörlerde edindiği saha deneyimini, süreç yaklaşımı ve sistemli çalışma anlayışıyla birleştirmeye çalışmaktadır. 19 Mayıs Üniversitesi Fen Fakültesi Biyoloji mezunudur; ayrıca Acil Durum ve Afet Yönetimi alanında eğitim almıştır.</p>
-                    <p>Meslek hayatı boyunca OSGB yapısı içinde ve çeşitli kurumlarda; hastane ve sağlık, inşaat, HES, telekom, ahşap ürünleri, makine, çelik konstrüksiyon, yapı malzemeleri ve açık hava taş ocakları gibi farklı risk profillerine sahip sektörlerde görev almıştır. Bu süreçte risk yönetimi, iç tetkik ve kalite bakışı konularında deneyim kazanmıştır.</p>
-                    <p>Java, Kotlin, Visual Basic ve MySQL bilgisi ile Almanca dil yetkinliğini bir araya getirerek, sahada karşılaşılan ihtiyaçlara daha pratik çözümler üretmeye odaklanmaktadır. Uzmandroid de bu yaklaşımın bir sonucu olarak ortaya çıkmıştır.</p><p>Halen ÜNYE MADEN'de görevine devam etmekte; iş güvenliği uzmanlığı ile yazılım geliştirme alanındaki ilgisini birlikte sürdürmektedir.</p>
+                    <p>Yüksel Karabulut, 1972 yılında Frankfurt, Almanya'da doğmuştur. İş güvenliği alanındaki saha deneyimini teknoloji ile birleştiren bir uzman olarak, geleneksel yaklaşımları dijital çözümlerle dönüştürmeye odaklanmaktadır. Almanya'da doğup eğitim hayatının bir bölümünü burada geçirmesinin kazandırdığı disiplin ve sistematik bakış açısı, geliştirdiği çözümlerin temelini oluşturmaktadır.</p>
+                    <p>19 Mayıs Üniversitesi Fen Fakültesi Biyoloji Bölümü mezunu olup, yaşam bilimlerinin kazandırdığı analitik ve sistematik düşünme yaklaşımını mesleki uygulamalarına yansıtmaktadır. Ayrıca Acil Durum ve Afet Yönetimi alanında da eğitim almıştır.</p>
+                    <p>Kariyeri boyunca hastane ve sağlık, inşaat, enerji (HES), telekomünikasyon, üretim ve madencilik gibi farklı sektörlerde görev alarak geniş bir risk perspektifi kazanmıştır. Bu çok yönlü saha deneyimi, gerçek ihtiyaçlara dayalı çözümler geliştirmesine olanak sağlamıştır.</p>
+                    <p>Java, Kotlin, Visual Basic ve MySQL teknolojilerini kullanarak iş güvenliği süreçlerini dijitalleştirmeye yönelik uygulamalar geliştirmektedir. Uzmandroid, sahadaki ihtiyaçlardan doğan ve pratik kullanım odaklı olarak tasarlanan bir çözüm olarak öne çıkmaktadır.</p>
+                    <p>Halen bentonit ve kedi kumu üretimi alanında sektörün güçlü kuruluşlarından biri olan Ünye Maden bünyesinde görevine devam etmekte; iş güvenliği uzmanlığı ile yazılım geliştirme çalışmalarını bir arada yürüterek, sektörde dijital dönüşüme katkı sağlamayı hedeflemektedir.</p>
                 </div>
             </div>
         </section>
