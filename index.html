@@ -10,17 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f4efe6;
-            --paper: rgba(255, 252, 247, 0.84);
-            --paper-strong: #fffdf9;
-            --ink: #112033;
-            --muted: #5d697a;
-            --line: rgba(17, 32, 51, 0.1);
-            --accent: #c7772b;
-            --accent-deep: #9c571a;
-            --navy: #17304c;
-            --glow: rgba(199, 119, 43, 0.24);
-            --shadow: 0 22px 70px rgba(18, 29, 45, 0.14);
+            --bg: #090f17;
+            --paper: rgba(20, 29, 41, 0.84);
+            --paper-strong: #141f2d;
+            --ink: #e6edf8;
+            --muted: #a3b0c3;
+            --line: rgba(228, 236, 250, 0.14);
+            --accent: #d08a3e;
+            --accent-deep: #f0b571;
+            --navy: #d9e4f8;
+            --glow: rgba(208, 138, 62, 0.24);
+            --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
             --radius-xl: 30px;
             --radius-lg: 22px;
             --radius-md: 16px;
@@ -35,9 +35,9 @@
             font-family: "Manrope", sans-serif;
             color: var(--ink);
             background:
-                radial-gradient(circle at 0% 0%, rgba(199, 119, 43, 0.16), transparent 26%),
-                radial-gradient(circle at 100% 18%, rgba(23, 48, 76, 0.14), transparent 28%),
-                linear-gradient(180deg, #fbf8f2 0%, #f4efe6 45%, #ece5d9 100%);
+                radial-gradient(circle at 0% 0%, rgba(208, 138, 62, 0.22), transparent 30%),
+                radial-gradient(circle at 100% 8%, rgba(44, 88, 142, 0.18), transparent 34%),
+                linear-gradient(180deg, #060b12 0%, #0a1119 42%, #101925 100%);
         }
 
         a { color: inherit; text-decoration: none; }
@@ -48,8 +48,8 @@
             position: sticky;
             top: 0;
             z-index: 20;
-            background: rgba(250, 246, 239, 0.82);
-            border-bottom: 1px solid rgba(17, 32, 51, 0.07);
+            background: rgba(7, 11, 17, 0.82);
+            border-bottom: 1px solid rgba(230, 237, 248, 0.12);
             backdrop-filter: blur(18px);
         }
 
@@ -75,8 +75,8 @@
 
         .hero__content {
             padding: 54px;
-            background: linear-gradient(145deg, rgba(255,255,255,0.92), rgba(255,249,242,0.82));
-            border: 1px solid rgba(17, 32, 51, 0.07);
+            background: linear-gradient(145deg, rgba(17, 25, 36, 0.95), rgba(13, 20, 30, 0.84));
+            border: 1px solid rgba(228, 236, 250, 0.12);
         }
 
         .eyebrow {
@@ -122,10 +122,10 @@
 
         .button:hover { transform: translateY(-2px); }
         .button--primary { color: #fff; background: linear-gradient(135deg, var(--accent), #e19a4f); box-shadow: 0 18px 30px var(--glow); }
-        .button--secondary { background: rgba(17, 32, 51, 0.06); color: var(--ink); }
+        .button--secondary { background: rgba(228, 236, 250, 0.08); color: var(--ink); }
 
         .hero__stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
-        .stat { padding: 16px 18px; border-radius: var(--radius-md); background: rgba(17, 32, 51, 0.04); }
+        .stat { padding: 16px 18px; border-radius: var(--radius-md); background: rgba(228, 236, 250, 0.07); }
         .stat strong { display: block; margin-bottom: 6px; color: var(--navy); font-size: 1.25rem; }
         .stat span { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
 
@@ -176,7 +176,7 @@
         .section__head p { margin: 0; max-width: 60ch; color: var(--muted); line-height: 1.85; }
         .proof { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; }
         .proof__card, .proof__grid article, .feature, .workflow__item, .highlight__quote, .founder__content, .contact__box {
-            border-radius: var(--radius-lg); background: var(--paper); border: 1px solid var(--line); box-shadow: 0 18px 34px rgba(17, 32, 51, 0.08);
+            border-radius: var(--radius-lg); background: var(--paper); border: 1px solid var(--line); box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
         }
         .proof__card { padding: 30px; }
         .proof__card h3 { margin: 14px 0 12px; font-size: 1.55rem; line-height: 1.25; }
@@ -204,7 +204,7 @@
             border-radius: var(--radius-lg);
             background: var(--paper-strong);
             border: 1px solid var(--line);
-            box-shadow: 0 18px 34px rgba(17, 32, 51, 0.08);
+            box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
         }
         .module-card h3 { margin: 0 0 10px; font-size: 1.22rem; }
         .module-card p { margin: 0; color: var(--muted); line-height: 1.75; }
@@ -231,7 +231,7 @@
         .highlight__panel ul { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
         .highlight__panel li { padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.88); }
         .highlight__quote { padding: 24px; }
-        .quote-card { padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.78); border: 1px solid rgba(17, 32, 51, 0.08); }
+        .quote-card { padding: 20px; border-radius: 18px; background: rgba(10, 16, 24, 0.72); border: 1px solid rgba(228, 236, 250, 0.14); }
         .quote-card + .quote-card { margin-top: 14px; }
         .quote-card strong { display: block; margin-bottom: 8px; font-size: 1.02rem; }
         .quote-card p { margin: 0; color: var(--muted); line-height: 1.8; }
@@ -261,7 +261,7 @@
         .contact { padding-bottom: 60px; }
         .contact__box {
             display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 36px;
-            background: linear-gradient(135deg, #fff5e8, #fffdf9); border-color: rgba(199, 119, 43, 0.18); box-shadow: var(--shadow);
+            background: linear-gradient(135deg, #111a26, #152234); border-color: rgba(208, 138, 62, 0.26); box-shadow: var(--shadow);
         }
         .contact__box h2 { margin: 14px 0 12px; font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.04; letter-spacing: -0.04em; }
         .contact__box p { margin: 0; max-width: 60ch; color: var(--muted); line-height: 1.85; }
