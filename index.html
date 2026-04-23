@@ -198,14 +198,16 @@
         .proof__grid strong { display: block; margin-bottom: 10px; color: var(--navy); font-size: 1.05rem; }
         .proof__grid p { margin: 0; color: var(--muted); line-height: 1.75; }
 
-        .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
         .feature { padding: 28px; }
+        .feature--wide { grid-column: 1 / -1; }
         .feature__icon {
             width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 18px;
             background: linear-gradient(135deg, rgba(199,119,43,0.18), rgba(23,48,76,0.12)); color: var(--navy); font-weight: 800;
         }
         .feature h3 { margin: 0 0 10px; font-size: 1.16rem; line-height: 1.45; }
         .feature p { margin: 0; color: var(--muted); line-height: 1.78; }
+        .feature p + p { margin-top: 12px; }
         .feature ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: 0.94rem; line-height: 1.55; }
         .feature li { position: relative; padding-left: 18px; }
         .feature li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
@@ -283,7 +285,7 @@
 
         @media (max-width: 980px) {
             .hero__grid, .proof, .highlight, .founder, .contact__box, .section__head { grid-template-columns: 1fr; display: grid; }
-            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid, .module-grid { grid-template-columns: 1fr 1fr; }
+            .dashboard__row, .workflow, .hero__stats, .proof__grid, .module-grid { grid-template-columns: 1fr 1fr; }
             .hero__content { padding: 36px 26px; }
         }
 
@@ -414,8 +416,8 @@
                     <article class="feature"><div class="feature__icon">01</div><h3>İşyeri, bölüm ve çalışan yönetimi</h3><p>İSG kayıtlarının temelini oluşturan işyeri, bölüm, unvan ve çalışan bilgilerini düzenli bir yapıda toplar.</p><ul><li>Çalışan kayıtları</li><li>Bölüm ve unvan tanımları</li><li>Toplu çalışan ekleme desteği</li></ul></article>
                     <article class="feature"><div class="feature__icon">02</div><h3>Saha gözetimi ve uygunsuzluk takibi</h3><p>Sahada tespit edilen uygunsuzlukları kayıt, durum, kapanış ve rapor mantığıyla izlenebilir hale getirir.</p><ul><li>Açık ve kapalı kayıt takibi</li><li>Termin ve sorumlu bağlantısı</li><li>Saha gözetim istatistikleri</li></ul></article>
                     <article class="feature"><div class="feature__icon">03</div><h3>Düzeltici faaliyet ve aksiyon yönetimi</h3><p>Tespit edilen sorunların yalnızca kaydedilmesini değil, planlanmasını, izlenmesini ve sonuçlandırılmasını destekler.</p><ul><li>Faaliyet planları</li><li>Hareket ve açıklama geçmişi</li><li>Oncesi-sonrası rapor yaklaşımı</li></ul></article>
-                    <article class="feature"><div class="feature__icon">04</div><h3>İş kazası kayıt ve analiz süreçleri</h3><p>İş kazası sonrası kayıt, arşivleme, istatistik oluşturma ve kök neden analizlerini sistematik ve bütünleşik bir yapıya taşır. Uzmandroid'in en güçlü yönlerinden biri, iş kazası bildirim ve kayıt yapısının SGK sistemindeki kategori ve sınıflandırmalarla uyumlu kurgulanmasıdır. Bu sayede girilen veriler, sonradan manuel düzeltme ihtiyacını azaltan daha tutarlı bir raporlama zemini oluşturur.</p><ul><li>SGK uyumlu kaza kategori yapısı</li><li>5 Neden ve Balık Kılçığı (Ishikawa) analizi</li><li>Kaza ön kayıt, arşiv ve istatistik bütünlüğü</li></ul></article>
-                    <article class="feature"><div class="feature__icon">05</div><h3>Eğitim, sertifika ve imza föyü yönetimi</h3><p>İSG eğitim süreçlerini; planlamadan katılıma, ölçümlemeden sertifikalandırmaya kadar uçtan uca dijital olarak yönetir. Sistem, güncel İSG eğitim mevzuatına uygun şekilde temel eğitim, yenileme eğitimleri ve özel eğitim başlıklarını destekler. Eğitim içerikleri yalnızca sabit bir yapıdan ibaret değildir; kullanıcı, işyerine veya işe özgü risklere göre kendi eğitim konu ağacını oluşturabilir, mevcut konuları düzenleyebilir ve kategoriler halinde kendi sistematiğini kurabilir.</p><p>Bu yaklaşım, her iş güvenliği uzmanının kendi çalışma tarzını ve saha deneyimini yansıtabileceği kişiselleştirilebilir bir eğitim yapısı oluşturur. Böylece sistem, herkeste aynı şekilde çalışan monoton bir yapı olmaktan çıkar; her uzmanın kendi yöntemine göre şekillenen karakteristik bir platform haline gelir. Eğitim içerikleri ayrıca ders süreleri ve dakika bazlı konu dağılımları ile yapılandırılabilir; böylece mevzuata uyumlu ve ölçülebilir bir eğitim planı oluşturulur.</p><p>Çalışanların eğitim durumları bireysel olarak takip edilir; hangi eğitimleri aldığı, hangi konularda eksik olduğu ve hangi sürelerin tamamlanmadığı sistem üzerinden net şekilde izlenebilir. Otomatik uyarı ve takip mekanizması sayesinde yaklaşan tekrar eğitimleri, eksik kalan konular ve yenilenmesi gereken eğitimler görünür hale getirilir.</p><p>Eğitim sonunda sertifikasyon süreci sistem içinde yönetilir. Çalışan bazlı veya toplu sertifika oluşturma ve yazdırma imkanı sunularak sertifikalar mevzuata uygun formatta hazırlanır. İmza föyleri ve eğitim çıktıları sistem tarafından oluşturulan PDF dokümanlar olarak üretilir. Eğitim akışı; konu ağacı yapısı, eğitim planlama modülü, imza föyü oluşturma ve raporlama araçları ile birlikte, iş güvenliği uzmanının eğitim süreçlerini kontrol altında tutmasını sağlayan bütünleşik bir yapıya dönüşür.</p><ul><li>Mevzuata uyumlu ve kişiselleştirilebilir eğitim konu ağacı</li><li>Dakika bazlı planlama, otomatik takip ve tekrar eğitim uyarıları</li><li>Sertifika, imza föyü ve PDF çıktılarla uçtan uca eğitim yönetimi</li></ul></article>
+                    <article class="feature feature--wide"><div class="feature__icon">04</div><h3>İş kazası kayıt ve analiz süreçleri</h3><p>İş kazası sonrası kayıt, arşivleme, istatistik oluşturma ve kök neden analizlerini sistematik ve bütünleşik bir yapıya taşır. Uzmandroid'in en güçlü yönlerinden biri, iş kazası bildirim ve kayıt yapısının SGK sistemindeki kategori ve sınıflandırmalarla uyumlu kurgulanmasıdır. Bu sayede girilen veriler, sonradan manuel düzeltme ihtiyacını azaltan daha tutarlı bir raporlama zemini oluşturur.</p><ul><li>SGK uyumlu kaza kategori yapısı</li><li>5 Neden ve Balık Kılçığı (Ishikawa) analizi</li><li>Kaza ön kayıt, arşiv ve istatistik bütünlüğü</li></ul></article>
+                    <article class="feature feature--wide"><div class="feature__icon">05</div><h3>Eğitim, sertifika ve imza föyü yönetimi</h3><p>İSG eğitim süreçlerini; planlamadan katılıma, ölçümlemeden sertifikalandırmaya kadar uçtan uca dijital olarak yönetir. Sistem, güncel İSG eğitim mevzuatına uygun şekilde temel eğitim, yenileme eğitimleri ve özel eğitim başlıklarını destekler. Eğitim içerikleri yalnızca sabit bir yapıdan ibaret değildir; kullanıcı, işyerine veya işe özgü risklere göre kendi eğitim konu ağacını oluşturabilir, mevcut konuları düzenleyebilir ve kategoriler halinde kendi sistematiğini kurabilir.</p><p>Bu yaklaşım, her iş güvenliği uzmanının kendi çalışma tarzını ve saha deneyimini yansıtabileceği kişiselleştirilebilir bir eğitim yapısı oluşturur. Böylece sistem, herkeste aynı şekilde çalışan monoton bir yapı olmaktan çıkar; her uzmanın kendi yöntemine göre şekillenen karakteristik bir platform haline gelir. Eğitim içerikleri ayrıca ders süreleri ve dakika bazlı konu dağılımları ile yapılandırılabilir; böylece mevzuata uyumlu ve ölçülebilir bir eğitim planı oluşturulur.</p><p>Çalışanların eğitim durumları bireysel olarak takip edilir; hangi eğitimleri aldığı, hangi konularda eksik olduğu ve hangi sürelerin tamamlanmadığı sistem üzerinden net şekilde izlenebilir. Otomatik uyarı ve takip mekanizması sayesinde yaklaşan tekrar eğitimleri, eksik kalan konular ve yenilenmesi gereken eğitimler görünür hale getirilir.</p><p>Eğitim sonunda sertifikasyon süreci sistem içinde yönetilir. Çalışan bazlı veya toplu sertifika oluşturma ve yazdırma imkanı sunularak sertifikalar mevzuata uygun formatta hazırlanır. İmza föyleri ve eğitim çıktıları sistem tarafından oluşturulan PDF dokümanlar olarak üretilir. Eğitim akışı; konu ağacı yapısı, eğitim planlama modülü, imza föyü oluşturma ve raporlama araçları ile birlikte, iş güvenliği uzmanının eğitim süreçlerini kontrol altında tutmasını sağlayan bütünleşik bir yapıya dönüşür.</p><ul><li>Mevzuata uyumlu ve kişiselleştirilebilir eğitim konu ağacı</li><li>Dakika bazlı planlama, otomatik takip ve tekrar eğitim uyarıları</li><li>Sertifika, imza föyü ve PDF çıktılarla uçtan uca eğitim yönetimi</li></ul></article>
                     <article class="feature"><div class="feature__icon">06</div><h3>İSG kurul, gündem ve tutanak yönetimi</h3><p>Kurul üyeleri, gündem yönetimi, toplantı tutanakları ve karar süreçleri uçtan uca dijital olarak yönetilir. Saha tespitlerinden tek tusla gundem olusturma, karar takibi ve guclu arsiv yapisi ile denetimlere hazir eksiksiz dokumantasyon saglar.</p><ul><li>Kurul uyeleri ve toplanti katilim yonetimi</li><li>Saha tespitinden tek tusla gundem olusturma</li><li>Karar takibi, tutanak arsivi ve denetime hazir ciktilar</li></ul></article>
                     <article class="feature"><div class="feature__icon">07</div><h3>KKD, zimmet ve stok yönetimi</h3><p>Çalışanlara verilen KKD kayıtlarını, teslim-iade süreçlerini ve unvana göre KKD gereksinimlerini izlenebilir hale getirir.</p><ul><li>KKD envanteri</li><li>Çalışan zimmetleri</li><li>İade, stok ve hurda takibi</li></ul></article>
                     <article class="feature"><div class="feature__icon">08</div><h3>Risk, tehlike ve bölüm güvenlik indeksi</h3><p>Tehlike kategorileri, risk değerlendirmesi ve Fine Kinney yaklaşımıyla bölüm bazlı gelişimi ölçülebilir kılar.</p><ul><li>Tehlike havuzu</li><li>Risk değerlendirmesi</li><li>Bölüm bazlı güvenlik görünümü</li></ul></article>
@@ -438,21 +440,6 @@
                 </div>
 
                 <div class="module-grid">
-                    <article class="module-card">
-                        <h3>Saha ve faaliyet omurgası</h3>
-                        <p>Uygunsuzluk tespiti, düzeltici faaliyet, kapanış, istatistik ve raporlama aynı operasyon çizgisi içinde ilerler. Böylece açık işler, geciken aksiyonlar ve tamamlanan kayıtlar daha görünür olur.</p>
-                        <div class="module-card__tags"><span>Saha gözetimi</span><span>Düzeltici faaliyet</span><span>Kapatma</span><span>Raporlama</span></div>
-                    </article>
-                    <article class="module-card">
-                        <h3>Eğitim ve kurul disiplini</h3>
-                        <p>Eğitim konu ağacı, imza föyü, sertifika, kurul gündemi, toplantı kararı ve tutanak akışları uzmanı tekrar eden evrak yükünden kurtarmaya yardımcı olur.</p>
-                        <div class="module-card__tags"><span>Eğitim</span><span>Sertifika</span><span>İmza föyü</span><span>Kurul tutanağı</span></div>
-                    </article>
-                    <article class="module-card">
-                        <h3>Çalışan bazlı izlenebilirlik</h3>
-                        <p>Çalışan kayıtları; KKD, belge, eğitim, talimat ve işyeri/bölüm ilişkileriyle birlikte düşünülür. Bu sayede kayıtlar yalnızca listede kalmaz, çalışan geçmişinin parçası olur.</p>
-                        <div class="module-card__tags"><span>Çalışan</span><span>KKD</span><span>Belge</span><span>Talimat</span></div>
-                    </article>
                     <article class="module-card">
                         <h3>KKD Risk Analizi ve Otomatik KKD Belirleme</h3>
                         <p>Sahada KKD sureclerinde en buyuk eksikliklerden biri, listelerin cogunlukla standart sablonlarla belirlenmesi ve yapilan ise ozgu risklerle yeterince iliskilendirilememesidir. Uzmandroid bu yapiyi degistirerek KKD belirleme surecini risk degerlendirmesine dayali dinamik bir akis haline getirir.</p>
@@ -505,8 +492,6 @@
 
                 <div class="highlight__quote">
                     <div class="quote-card"><strong>Dağınık kayıtlar yerine tek akış</strong><p>Excel, mesajlaşma ve farklı klasörlere yayılan saha bilgisini bir merkezde toplar.</p></div>
-                    <div class="quote-card"><strong>Form değil, operasyon aracı</strong><p>Kullanıcı yalnızca veri girmez; açık, kapalı ve gecikmiş süreçleri aynı anda görür.</p></div>
-                    <div class="quote-card"><strong>Sade ama etkili</strong><p>Görsel yük oluşturmayan yalın tasarım, çıktıda ise güçlü ve profesyonel bir iz bırakır.</p></div>
                     <div class="quote-card"><strong>Ölçülebilir bölüm güvenliği</strong><p>Bölüm Güvenlik İndeksi yaklaşımı, Fine Kinney ile değerlendirilen tehlikeleri puanlayarak hangi bölümün ne ölçüde geliştiğini somut biçimde izlemeyi mümkün kılar.</p></div>
                     <div class="quote-card"><strong>İnternete bağımlı olmayan çalışma</strong><p>Uygulama MySQL veritabanı ile çalışır; lisans ve güncelleme dışında temel kayıt akışı yerel veya ortak sunucu üzerinde sürdürülebilir.</p></div>
                 </div>
@@ -551,6 +536,7 @@
                         <h3>Deneme lisansı ve mesleki dayanışma yaklaşımı</h3>
                         <p>Uzmandroid için 6 ay ücretsiz deneme lisansı sunulmaktadır. Bu yaklaşım, sistemin sahadaki gerçek ihtiyaçlara ne kadar karşılık verdiğini kullanıcıların doğrudan deneyimleyebilmesi amacıyla tasarlanmıştır.</p>
                         <p>Bu süreç aynı zamanda ticari bir öncelikten ziyade, meslektaş dayanışmasını ve iş güvenliği alanına katkıyı esas alan bir yaklaşımdır. Amaç, kullanıcıların sistemi kendi çalışma düzenlerine entegre ederek gerçek faydayı deneyimlemesidir.</p>
+                        <p>Uzmandroid, erişilebilir ve sürdürülebilir bir yapı hedefler. Bu doğrultuda ücretlendirme politikası, meslektaşların kullanımını desteklemeyi esas alan, kullanıcıları zorlamayan, makul ve ulaşılabilir seviyelerde tutulacak şekilde planlanmaktadır.</p>
                     </article>
                     <article class="module-card">
                         <h3>Veri korunumu ve adil kullanım dengesi</h3>
