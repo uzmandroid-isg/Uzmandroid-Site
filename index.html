@@ -79,7 +79,7 @@
         .nav a:hover { color: var(--ink); }
         .nav__cta { padding: 12px 18px; border-radius: 999px; background: linear-gradient(135deg, #f6c77d, #f0a24f); color: #07111b; box-shadow: 0 14px 26px rgba(208, 138, 62, 0.28); }
 
-        .hero { padding: 52px 0 36px; }
+        .hero { padding: 44px 0 36px; }
         .hero__grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 28px; align-items: stretch; }
         .hero__content, .hero__panel { border-radius: var(--radius-xl); box-shadow: var(--shadow); }
 
@@ -138,6 +138,95 @@
         .stat { padding: 16px 18px; border-radius: var(--radius-md); background: rgba(228, 236, 250, 0.07); }
         .stat strong { display: block; margin-bottom: 6px; color: var(--navy); font-size: 1.25rem; }
         .stat span { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+        .hero__stage {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .identity-card {
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(145deg, rgba(17, 25, 36, 0.95), rgba(13, 20, 30, 0.84));
+            border: 1px solid rgba(228, 236, 250, 0.13);
+            box-shadow: var(--shadow);
+        }
+
+        .identity-card__media {
+            height: 380px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, rgba(20, 36, 58, 0.98), rgba(17, 32, 51, 0.96));
+            border-bottom: 1px solid rgba(228, 236, 250, 0.12);
+        }
+
+        .identity-card__media--photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .identity-card__media--logo {
+            padding: 42px;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(255,255,255,0.13), rgba(255,255,255,0.03) 66%),
+                linear-gradient(180deg, rgba(20, 36, 58, 0.98), rgba(17, 32, 51, 0.96));
+        }
+
+        .identity-card__media--logo img {
+            width: min(88%, 460px);
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.28));
+        }
+
+        .identity-card__copy {
+            padding: 30px;
+            display: grid;
+            align-content: start;
+            gap: 14px;
+        }
+
+        .identity-card h1,
+        .identity-card h2 {
+            margin: 0;
+            max-width: none;
+            font-family: "Playfair Display", serif;
+            font-size: 2.55rem;
+            line-height: 1.04;
+            letter-spacing: 0;
+        }
+
+        .identity-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.82;
+            font-size: 1rem;
+        }
+
+        .identity-card__role {
+            color: var(--accent-deep) !important;
+            font-weight: 800;
+        }
+
+        .identity-card__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .hero__summary {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
 
         .hero__panel {
             position: relative;
@@ -349,8 +438,9 @@
 
         @media (max-width: 980px) {
             .hero__grid, .proof, .highlight, .founder, .contact__box, .section__head { grid-template-columns: 1fr; display: grid; }
+            .hero__stage { grid-template-columns: 1fr; }
             .dashboard__top { grid-template-columns: 1fr; }
-            .dashboard__row, .workflow, .hero__stats, .proof__grid, .module-grid, .kkd-flow, .kkd-system__grid { grid-template-columns: 1fr 1fr; }
+            .dashboard__row, .workflow, .hero__stats, .hero__summary, .proof__grid, .module-grid, .kkd-flow, .kkd-system__grid { grid-template-columns: 1fr 1fr; }
             .hero__content { padding: 36px 26px; }
         }
 
@@ -358,10 +448,15 @@
             .nav { display: none; }
             .hero { padding-top: 26px; }
             .hero h1 { max-width: none; }
+            .identity-card__media { height: 280px; }
+            .identity-card__media--logo { padding: 28px; }
+            .identity-card__copy { padding: 24px; }
+            .identity-card h1, .identity-card h2 { font-size: 2.1rem; }
+            .identity-card__actions { flex-direction: column; }
             .brand__mark { width: 44px; height: 44px; border-radius: 10px; }
             .brand__name { font-size: 1.08rem; }
             .brand__tag { font-size: 0.84rem; }
-            .dashboard__row, .features, .workflow, .hero__stats, .proof__grid, .module-grid, .kkd-flow, .kkd-system__grid { grid-template-columns: 1fr; }
+            .dashboard__row, .features, .workflow, .hero__stats, .hero__summary, .proof__grid, .module-grid, .kkd-flow, .kkd-system__grid { grid-template-columns: 1fr; }
             .hero__actions { flex-direction: column; }
             .button, .contact__actions { width: 100%; }
             .contact__actions { min-width: 0; }
@@ -393,83 +488,42 @@
 
     <main>
         <section class="hero" id="urun">
-            <div class="shell hero__grid">
-                <div class="hero__content">
-                    <span class="eyebrow">Portable masaüstü İSG uygulaması</span>
-                    <h1>İSG yönetimini sadeleştiren güçlü bir saha platformu.</h1>
-                    <p class="hero__lead">Uzmandroid; saha gözetimi, uygunsuzluk takibi, düzeltici faaliyetler, iş kazası analizi, eğitim, kurul süreçleri, KKD yönetimi, çalışan kayıtları ve profesyonel raporlamayı tek merkezde toplayan kapsamlı bir İSG yönetim platformudur.</p>
-                    <p class="hero__mini">Bu sistem, bir yazılım ürünü olarak değil; doğrudan iş güvenliği uzmanının sahada karşılaştığı ihtiyaçlardan ve evrak yükünün yarattığı operasyonel zorluklardan doğmuştur. Amaç; iş güvenliği uzmanını saatler süren evrak işleri, dağınık Excel dosyaları ve tekrar eden raporlama süreçlerinin yükünden büyük ölçüde kurtarmaktır.</p>
-                    <p class="hero__mini">Geleneksel yöntemlerde bilgisayar başında harcanan uzun raporlama sürelerini azaltarak, uzmanın asıl odağı olan saha gözetimi, risk analizi ve önleyici faaliyetlere daha fazla zaman ayırmasını sağlar. Süreçleri sadeleştirir, kayıtları düzenler ve iş akışını tek merkezde toplar.</p>
-                    <p class="hero__mini">İnternet bağlantısına ihtiyaç duymadan, tamamen kullanıcının kendi bilgisayarında çalışan yapısı sayesinde veri kontrolünü kullanıcıya bırakır ve kesintisiz bir çalışma ortamı sunar.</p>
-                    <p class="hero__mini">Amaç; evrak yükünü azaltan, zamanı geri kazandıran ve iş güvenliği uzmanına sahada daha etkin olma imkanı sağlayan düzenli, izlenebilir ve sürdürülebilir bir çalışma sistemi oluşturmaktır.</p>
-                    <div class="hero__actions">
-                    <a class="button button--primary" href="/clickonce/Uzmandroid.application">Son sürümü indir</a>
-                        <a class="button button--secondary" href="#ozellikler">Modülleri incele</a>
-                    </div>
-                    <div class="hero__stats">
-                        <div class="stat"><strong>Tek merkez</strong><span>Denetim, eğitim, kurul, KKD ve kaza süreçleri aynı veri düzeninde çalışır.</span></div>
-                        <div class="stat"><strong>MySQL altyapı</strong><span>Yerel bilgisayar veya ortak sunucu senaryosuna uygun kayıt yapısı sunar.</span></div>
-                        <div class="stat"><strong>Etkili çıktı</strong><span>PDF, Excel ve rapor akışları yönetim ve denetim kullanımına hazırlanır.</span></div>
-                    </div>
-                </div>
+            <div class="shell">
+                <div class="hero__stage" id="kurucu">
+                    <article class="identity-card">
+                        <div class="identity-card__media identity-card__media--photo">
+                            <img src="images/ben.jpeg" alt="Uzmandroid kurucusu ve geliştiricisi Yüksel Karabulut">
+                        </div>
+                        <div class="identity-card__copy">
+                            <span class="eyebrow">Kurucu ve geliştirici</span>
+                            <h2>Yüksel Karabulut</h2>
+                            <p class="identity-card__role">A Sınıfı İş Güvenliği Uzmanı</p>
+                            <p>İş güvenliği alanındaki saha deneyimini teknolojiyle birleştiren Yüksel Karabulut, Uzmandroid'i gerçek çalışma ihtiyaçlarından hareketle geliştirmiştir.</p>
+                            <p>Hastane, inşaat, enerji, telekomünikasyon, üretim ve madencilik gibi farklı sektörlerde edindiği risk perspektifi; uygulamanın pratik, sade ve denetime hazır bir mantıkla şekillenmesini sağlamıştır.</p>
+                        </div>
+                    </article>
 
-                <div class="hero__panel">
-                    <div class="dashboard">                        <div class="dashboard__top">
-                            <div class="hero-founder-card">
-                                <span class="founder__badge">Kurucu ve geliştirici</span>
-                                <div class="hero-founder-card__photo">
-                                    <img src="images/ben.jpeg" alt="Uzmandroid kurucusu ve geliştiricisi Yüksel Karabulut">
-                                </div>
-                                <h3>Yüksel Karabulut</h3>
-                                <p class="hero-founder-card__role">A Sınıfı İş Güvenliği Uzmanı</p>
-                                <p>2013 yılından bu yana aktif saha deneyimiyle çalışan; iş güvenliği pratiğini dijital çözümlerle güçlendirmeye odaklanan bir uzmandır.</p>
-                            </div>
-
-                            <div class="dashboard__logo-card">
-                                <img src="uzmandroid_logo.png" alt="Uzmandroid logo">
+                    <article class="identity-card">
+                        <div class="identity-card__media identity-card__media--logo">
+                            <img src="uzmandroid_logo.png" alt="Uzmandroid logosu">
+                        </div>
+                        <div class="identity-card__copy">
+                            <span class="eyebrow">Dijital İSG yönetim platformu</span>
+                            <h1>Uzmandroid</h1>
+                            <p>Uzmandroid; saha gözetimi, uygunsuzluk takibi, düzeltici faaliyetler, eğitim, kurul, KKD, çalışan kayıtları ve profesyonel raporlamayı tek merkezde buluşturan masaüstü İSG platformudur.</p>
+                            <p>Portable kullanım, MySQL altyapısı ve PDF/Excel çıktı akışlarıyla iş güvenliği uzmanının evrak yükünü azaltmayı, kayıt düzenini güçlendirmeyi ve sahaya daha fazla zaman ayırmasını hedefler.</p>
+                            <div class="identity-card__actions">
+                                <a class="button button--primary" href="/clickonce/Uzmandroid.application">Son sürümü indir</a>
+                                <a class="button button--secondary" href="#ozellikler">Modülleri incele</a>
                             </div>
                         </div>
-
-                        <div class="dashboard__list">
-                            <div class="dashboard__label">Temel modüller</div>
-                            <ul>
-                                <li><span>Saha gözetimi</span><strong>Hazır</strong></li>
-                                <li><span>Eğitim, sertifika ve imza föyü</span><strong>Hazır</strong></li>
-                                <li><span>Kurul, gündem ve tutanak</span><strong>Hazır</strong></li>
-                                <li><span>KKD ve zimmet takibi</span><strong>Hazır</strong></li>
-                                <li><span>Kaza analizi ve 5 Neden</span><strong>Hazır</strong></li>
-                            </ul>
-                        </div>
-
-                        <div class="dashboard__quote">
-                            <p>Sadelik burada sadece görsel bir tercih değil; sahada zaman kaybettiren gereksiz adımları, karmaşık menü yapısını ve operasyonu zorlaştıran fazlalıkları azaltan bilinçli bir tasarım yaklaşımıdır.</p>
-                            <p>İş güvenliği süreçlerinde yazılımlar çoğu zaman çok fazla özellik eklenerek genişletilse de, sahadaki gerçek kullanımda bu durum her zaman daha verimli bir sonuç doğurmaz. Sürecin doğası gereği hızlı, net ve pratik ilerlemesi gereken işlerde; aşırı detaylı ve dallanan sistemler, kullanıcıyı süreçten uzaklaştırıp raporlama yükünü artırabilir.</p>
-                            <p>Uzmandroid bu noktada farklı bir bakış açısıyla ele alınmıştır. Tasarımında amaç, "daha fazla özellik" sunmak değil; iş güvenliği uzmanının günlük iş akışında gerçekten kullandığı, ihtiyaç duyduğu ve sahada karşılığı olan fonksiyonları tek bir yapıda toplamak olmuştur.</p>
-                            <p>Ayrıca sistem, doğrudan iş güvenliği uzmanı bakış açısıyla şekillendiği için; raporlamanın sahadaki gerçek hedefiyle uyumlu, daha net, daha odaklı ve karar destekleyici bir yapıya sahip olacak şekilde tasarlanmıştır. Böylece yazılım, kendi başına bir amaç değil; uzmanı destekleyen bir araç haline gelir.</p>
-                        </div>
-                    </div>
+                    </article>
                 </div>
-            </div>
-        </section>
 
-        <section class="section" id="kurucu">
-            <div class="shell founder">
-                <aside class="founder__visual">
-                    <span class="founder__badge">Uzmandroid</span>
-                    <div class="founder__logo-wrap">
-                        <img src="uzmandroid_logo.png" alt="Uzmandroid logosu">
-                    </div>
-                    <h3>Kimdir?</h3>
-                    <p>Uzmandroid'in arkasındaki saha deneyimini ve geliştirme yaklaşımını tanıyın.</p>
-                </aside>
-                <div class="founder__content">
-                    <span class="eyebrow">Kimdir?</span>
-                    <h2>Sahadan gelen birikimi yazılıma dönüştüren profesyonel bir yaklaşım</h2>
-                    <p>İş Güvenliği Uzmanı Yüksel Karabulut, 1972 yılında Frankfurt, Almanya'da doğmuştur. İş güvenliği alanındaki saha deneyimini teknoloji ile birleştiren bir uzman olarak, geleneksel yaklaşımları dijital çözümlerle dönüştürmeye odaklanmaktadır. Uzmandroid, 4 yıla yayılan kişisel geliştirme emeği ve sahadaki gerçek ihtiyaçların birleşimiyle ortaya çıkmıştır. Almanya'da doğup eğitim hayatının bir bölümünü burada geçirmesinin kazandırdığı disiplin ve sistematik bakış açısı, geliştirdiği çözümlerin temelini oluşturmaktadır.</p>
-                    <p>19 Mayıs Üniversitesi Fen Fakültesi Biyoloji Bölümü mezunu olup, yaşam bilimlerinin kazandırdığı analitik ve sistematik düşünme yaklaşımını mesleki uygulamalarına yansıtmaktadır. Ayrıca Acil Durum ve Afet Yönetimi alanında da eğitim almıştır.</p>
-                    <p>Kariyeri boyunca hastane ve sağlık, inşaat, enerji (HES), telekomünikasyon, üretim ve madencilik gibi farklı sektörlerde görev alarak geniş bir risk perspektifi kazanmıştır. Bu çok yönlü saha deneyimi, gerçek ihtiyaçlara dayalı çözümler geliştirmesine olanak sağlamıştır.</p>
-                    <p>Java, Kotlin, Visual Basic ve MySQL teknolojilerini kullanarak iş güvenliği süreçlerini dijitalleştirmeye yönelik uygulamalar geliştirmektedir. Uzmandroid, sahadaki ihtiyaçlardan doğan ve pratik kullanım odaklı olarak tasarlanan bir çözüm olarak öne çıkmaktadır.</p>
-                    <p>Halen bentonit ve kedi kumu üretimi alanında sektörün güçlü kuruluşlarından biri olan Ünye Maden bünyesinde görevine devam etmekte; iş güvenliği uzmanlığı ile yazılım geliştirme çalışmalarını bir arada yürüterek, sektörde dijital dönüşüme katkı sağlamayı hedeflemektedir.</p>
+                <div class="hero__summary">
+                    <div class="stat"><strong>Tek merkez</strong><span>Denetim, eğitim, kurul, KKD ve kaza süreçleri aynı veri düzeninde çalışır.</span></div>
+                    <div class="stat"><strong>MySQL altyapı</strong><span>Yerel bilgisayar veya ortak sunucu senaryosuna uygun kayıt yapısı sunar.</span></div>
+                    <div class="stat"><strong>Etkili çıktı</strong><span>PDF, Excel ve rapor akışları yönetim ve denetim kullanımına hazırlanır.</span></div>
                 </div>
             </div>
         </section>
