@@ -173,14 +173,18 @@
 
         .identity-card__media--logo {
             padding: 5px;
+            position: relative;
+            overflow: hidden;
             background:
                 radial-gradient(circle at 50% 42%, rgba(255,255,255,0.13), rgba(255,255,255,0.03) 66%),
                 linear-gradient(180deg, rgba(20, 36, 58, 0.98), rgba(17, 32, 51, 0.96));
         }
 
         .identity-card__media--logo img {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            inset: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
             max-height: none;
             object-fit: contain;
             border-radius: 24px;
@@ -213,23 +217,6 @@
 
         .identity-card__role {
             color: var(--accent-deep) !important;
-            font-weight: 800;
-        }
-
-        .identity-card__badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 2px;
-        }
-
-        .identity-card__badges span {
-            padding: 7px 10px;
-            border-radius: 999px;
-            background: rgba(228, 236, 250, 0.08);
-            border: 1px solid rgba(228, 236, 250, 0.13);
-            color: var(--navy);
-            font-size: 0.78rem;
             font-weight: 800;
         }
 
@@ -468,7 +455,7 @@
             .hero { padding-top: 26px; }
             .hero h1 { max-width: none; }
             .identity-card__media { height: 280px; }
-            .identity-card__media--logo { padding: 28px; }
+            .identity-card__media--logo { padding: 5px; }
             .identity-card__copy { padding: 24px; }
             .identity-card h1, .identity-card h2 { font-size: 2.1rem; }
             .identity-card__actions { flex-direction: column; }
@@ -519,7 +506,6 @@
                             <p>1972 yılında Almanya'nın Frankfurt kentinde doğan Yüksel Karabulut, Türkiye'de Ondokuz Mayıs Üniversitesi Fen Fakültesi Biyoloji Bölümü'nden mezun olmuştur. Yeditepe Üniversitesi Kalite Mühendisliği Sertifikası ile yönetim sistemleri, risk ve saha uygulamaları odağını güçlendirmiştir.</p>
                             <p>ISO 9001 Kalite Yönetim Sistemi, ISO 14001 Çevre Yönetim Sistemi, ISO 45001 İş Sağlığı ve Güvenliği Yönetim Sistemi, ISO 19011 Yönetim Sistemleri İç Denetçisi ve ISO 31000 Risk Yönetimi alanlarındaki birikimini; hastane, inşaat, enerji, telekomünikasyon, üretim ve madencilik sahalarından gelen pratik deneyimle birleştirmiştir.</p>
                             <p>Halen sektörün öncü kuruluşları arasında yer alan Ünye Madencilik Sanayi ve Tic. A.Ş. bünyesinde İşyeri Sağlık ve Güvenlik Birimi'nin başında görevini yürütmektedir.</p>
-                            <div class="identity-card__badges"><span>A Sınıfı İş Güvenliği Uzmanı</span><span>Yönetim Sistemleri Baş Denetçisi</span><span>Yönetici</span><span>Kalite Mühendisliği</span><span>Risk Yönetimi</span></div>
                         </div>
                     </article>
 
