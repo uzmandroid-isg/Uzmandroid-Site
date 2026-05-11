@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uzmandroid | Dijital İSG Yönetim Platformu</title>
-    <meta name="description" content="Uzmandroid; saha gözetimi, eğitim, kurul, iş kazası analizi, KKD risk değerlendirmesi, ünvan ve göreve göre otomatik KKD zimmeti, MySQL tabanlı kayıt ve profesyonel raporlamayı tek merkezde buluşturan masaüstü İSG yönetim platformudur.">
+    <meta name="description" content="Uzmandroid; saha gözetimi, uygunsuzluk, düzeltici faaliyet, eğitim, kurul, iş kazası analizi, KKD risk değerlendirmesi, iş ekipmanı takibi, talimat, mesleki belge ve profesyonel raporlamayı tek merkezde buluşturan masaüstü İSG yönetim platformudur.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -179,10 +179,11 @@
         }
 
         .identity-card__media--logo img {
-            width: min(88%, 460px);
+            width: min(74%, 360px);
+            max-height: 250px;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.28));
+            filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.24));
         }
 
         .identity-card__copy {
@@ -211,6 +212,23 @@
 
         .identity-card__role {
             color: var(--accent-deep) !important;
+            font-weight: 800;
+        }
+
+        .identity-card__badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .identity-card__badges span {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(228, 236, 250, 0.08);
+            border: 1px solid rgba(228, 236, 250, 0.13);
+            color: var(--navy);
+            font-size: 0.78rem;
             font-weight: 800;
         }
 
@@ -477,7 +495,6 @@
                 <a href="#urun">Ürün</a>
                 <a href="#yaklasim">Yaklaşım</a>
                 <a href="#ozellikler">Özellikler</a>
-                <a href="#kkd-sistemi">KKD</a>
                 <a href="#kapsam">Kapsam</a>
                 <a href="#kurucu">Kurucu</a>
                 <a href="#iletisim">İletişim</a>
@@ -498,8 +515,9 @@
                             <span class="eyebrow">Kurucu ve geliştirici</span>
                             <h2>Yüksel Karabulut</h2>
                             <p class="identity-card__role">A Sınıfı İş Güvenliği Uzmanı</p>
-                            <p>İş güvenliği alanındaki saha deneyimini teknolojiyle birleştiren Yüksel Karabulut, Uzmandroid'i gerçek çalışma ihtiyaçlarından hareketle geliştirmiştir.</p>
-                            <p>Hastane, inşaat, enerji, telekomünikasyon, üretim ve madencilik gibi farklı sektörlerde edindiği risk perspektifi; uygulamanın pratik, sade ve denetime hazır bir mantıkla şekillenmesini sağlamıştır.</p>
+                            <p>1972 yılında Almanya'nın Frankfurt kentinde doğan Yüksel Karabulut, Türkiye'de Ondokuz Mayıs Üniversitesi Fen Fakültesi Biyoloji Bölümü'nden mezun olmuştur. Yeditepe Üniversitesi Kalite Mühendisliği Sertifikası ile yönetim sistemleri, risk ve saha uygulamaları odağını güçlendirmiştir.</p>
+                            <p>ISO 9001 Kalite Yönetim Sistemi, ISO 14001 Çevre Yönetim Sistemi, ISO 45001 İş Sağlığı ve Güvenliği Yönetim Sistemi, ISO 19011 Yönetim Sistemleri İç Denetçisi ve ISO 31000 Risk Yönetimi alanlarındaki birikimini; hastane, inşaat, enerji, telekomünikasyon, üretim ve madencilik sahalarından gelen pratik deneyimle birleştirmiştir.</p>
+                            <div class="identity-card__badges"><span>A Sınıfı İş Güvenliği Uzmanı</span><span>Yönetim Sistemleri Baş Denetçisi</span><span>Yönetici</span><span>Kalite Mühendisliği</span><span>Risk Yönetimi</span></div>
                         </div>
                     </article>
 
@@ -511,7 +529,7 @@
                             <span class="eyebrow">Dijital İSG yönetim platformu</span>
                             <h1>Uzmandroid</h1>
                             <p>Uzmandroid; saha gözetimi, uygunsuzluk takibi, düzeltici faaliyetler, eğitim, kurul, KKD, çalışan kayıtları ve profesyonel raporlamayı tek merkezde buluşturan masaüstü İSG platformudur.</p>
-                            <p>Portable kullanım, MySQL altyapısı ve PDF/Excel çıktı akışlarıyla iş güvenliği uzmanının evrak yükünü azaltmayı, kayıt düzenini güçlendirmeyi ve sahaya daha fazla zaman ayırmasını hedefler.</p>
+                            <p>Portable kullanım, MySQL altyapısı, PDF raporlar ve öncesi-sonrası PowerPoint sunum çıktılarıyla iş güvenliği uzmanının evrak yükünü azaltmayı, kayıt düzenini güçlendirmeyi ve sahaya daha fazla zaman ayırmasını hedefler.</p>
                             <div class="identity-card__actions">
                                 <a class="button button--primary" href="/clickonce/Uzmandroid.application">Son sürümü indir</a>
                                 <a class="button button--secondary" href="#ozellikler">Modülleri incele</a>
@@ -521,9 +539,9 @@
                 </div>
 
                 <div class="hero__summary">
-                    <div class="stat"><strong>Tek merkez</strong><span>Denetim, eğitim, kurul, KKD ve kaza süreçleri aynı veri düzeninde çalışır.</span></div>
+                    <div class="stat"><strong>Tek merkez</strong><span>Saha gözetimi, uygunsuzluk, faaliyet, eğitim, kurul, kaza, KKD, iş ekipmanı, talimat, mesleki belge ve risk süreçleri aynı veri düzeninde çalışır.</span></div>
                     <div class="stat"><strong>MySQL altyapı</strong><span>Yerel bilgisayar veya ortak sunucu senaryosuna uygun kayıt yapısı sunar.</span></div>
-                    <div class="stat"><strong>Etkili çıktı</strong><span>PDF, Excel ve rapor akışları yönetim ve denetim kullanımına hazırlanır.</span></div>
+                    <div class="stat"><strong>Etkili çıktı</strong><span>PDF raporlar, sertifika/zimmet belgeleri ve öncesi-sonrası PowerPoint sunumları yönetim ve saha gözetimi kullanımına hazırlanır.</span></div>
                 </div>
             </div>
         </section>
@@ -535,22 +553,20 @@
                         <span class="eyebrow">Temel yaklaşım</span>
                         <h2>Basit görünen ama sahada güçlü çalışan bir sistem</h2>
                     </div>
-                    <p>Uzmandroid; kalabalık evrak akışı, ayrı ayrı tutulan Excel listeleri, unutulan aksiyonlar ve dağınık klasör düzeni yerine, iş güvenliği uzmanının günlük çalışma mantığına yakın bir operasyon düzeni sunar.</p>
+                    <p>Uzmandroid; kalabalık evrak akışı, ayrı ayrı tutulan listeler, unutulan aksiyonlar ve dağınık klasör düzeni yerine, iş güvenliği uzmanının günlük çalışma mantığına yakın bir operasyon düzeni sunar.</p>
                 </div>
 
                 <div class="proof">
                     <article class="proof__card">
                         <span class="eyebrow">Neyi çözer?</span>
-                        <h3>Excel, WhatsApp, klasör ve dağınık not akışını izlenebilir bir İSG operasyon hattına dönüştürür.</h3>
-                        <p>İşyeri, bölüm, çalışan, uygunsuzluk, faaliyet, eğitim, kurul, KKD ve kaza bilgileri aynı veri mantığında ilerlediği için kullanıcı hangi işin açık, hangisinin kapalı, hangisinin rapora hazır olduğunu daha net görür.</p>
+                        <h3>Dağınık saha kayıtlarını, aksiyonları ve yasal takipleri tek ekranda yönetilebilir bir İSG operasyonuna dönüştürür.</h3>
+                        <p>İşyeri, bölüm, çalışan, saha gözetimi, uygunsuzluk, düzeltici faaliyet, eğitim, kurul, kaza, KKD, iş ekipmanı, talimat, mesleki belge ve risk bilgileri aynı mantıkla ilerlediği için uzman; açık işleri, kapanan aksiyonları, yaklaşan yükümlülükleri ve rapora hazır kayıtları daha hızlı görür.</p>
                     </article>
 
                     <div class="proof__grid">
                         <article><strong>Hızlı kayıt</strong><p>Sahada ihtiyaç duyulan bilgiler önceliklendirilir; kullanıcı form içinde kaybolmaz.</p></article>
-                        <article><strong>Yerel veya ortak sunucu</strong><p>Veriler MySQL üzerinde tutulur; tek bilgisayar veya ortak sunucu kullanımı için uygun yapı sunar.</p></article>
-                        <article><strong>Sunuma hazır çıktı</strong><p>PDF, Excel ve rapor çıktıları yalnızca arşiv değil, yönetim ve denetim diliyle paylaşılabilir belge üretir.</p></article>
+                        <article><strong>Sunuma hazır çıktı</strong><p>PDF raporlar, sertifika/zimmet belgeleri ve öncesi-sonrası PowerPoint sunumları yalnızca arşiv değil, yönetimle paylaşılabilir karar destek belgeleri üretir.</p></article>
                         <article><strong>Gerçek ihtiyaç odaklı</strong><p>Modüller teorik değil, sahada tekrar eden mesleki ihtiyaçlardan doğmuştur.</p></article>
-                        <article><strong>Lisans ve sürdürülebilirlik</strong><p>Deneme, çevrimdışı özel lisans ve ileride paket bazlı kullanım kısıtları için altyapı barındırır.</p></article>
                     </div>
                 </div>
             </div>
@@ -572,13 +588,10 @@
                     <article class="feature"><div class="feature__icon">03</div><h3>Düzeltici faaliyet ve aksiyon yönetimi</h3><p>Tespit edilen sorunların yalnızca kaydedilmesini değil, planlanmasını, izlenmesini ve sonuçlandırılmasını destekler.</p><ul><li>Faaliyet planları</li><li>Hareket ve açıklama geçmişi</li><li>Öncesi-sonrası rapor yaklaşımı</li></ul></article>
                     <article class="feature feature--wide"><div class="feature__icon">04</div><h3>İş kazası kayıt ve analiz süreçleri</h3><p>İş kazası sonrası kayıt, arşivleme, istatistik oluşturma ve kök neden analizlerini sistematik ve bütünleşik bir yapıya taşır. Uzmandroid'in en güçlü yönlerinden biri, iş kazası bildirim ve kayıt yapısının SGK sistemindeki kategori ve sınıflandırmalarla uyumlu kurgulanmasıdır. Bu sayede girilen veriler, sonradan manuel düzeltme ihtiyacını azaltan daha tutarlı bir raporlama zemini oluşturur.</p><ul><li>SGK uyumlu kaza kategori yapısı</li><li>5 Neden ve Balık Kılçığı (Ishikawa) analizi</li><li>Kaza ön kayıt, arşiv ve istatistik bütünlüğü</li></ul></article>
                     <article class="feature feature--wide"><div class="feature__icon">05</div><h3>Eğitim, sertifika ve imza föyü yönetimi</h3><p>İSG eğitim süreçlerini; planlamadan katılıma, ölçümlemeden sertifikalandırmaya kadar uçtan uca dijital olarak yönetir. Sistem, güncel İSG eğitim mevzuatına uygun şekilde temel eğitim, yenileme eğitimleri ve özel eğitim başlıklarını destekler. Eğitim içerikleri yalnızca sabit bir yapıdan ibaret değildir; kullanıcı, işyerine veya işe özgü risklere göre kendi eğitim konu ağacını oluşturabilir, mevcut konuları düzenleyebilir ve kategoriler halinde kendi sistematiğini kurabilir.</p><p>Bu yaklaşım, her iş güvenliği uzmanının kendi çalışma tarzını ve saha deneyimini yansıtabileceği kişiselleştirilebilir bir eğitim yapısı oluşturur. Böylece sistem, herkeste aynı şekilde çalışan monoton bir yapı olmaktan çıkar; her uzmanın kendi yöntemine göre şekillenen karakteristik bir platform haline gelir. Eğitim içerikleri ayrıca ders süreleri ve dakika bazlı konu dağılımları ile yapılandırılabilir; böylece mevzuata uyumlu ve ölçülebilir bir eğitim planı oluşturulur.</p><p>Çalışanların eğitim durumları bireysel olarak takip edilir; hangi eğitimleri aldığı, hangi konularda eksik olduğu ve hangi sürelerin tamamlanmadığı sistem üzerinden net şekilde izlenebilir. Otomatik uyarı ve takip mekanizması sayesinde yaklaşan tekrar eğitimleri, eksik kalan konular ve yenilenmesi gereken eğitimler görünür hale getirilir.</p><p>Eğitim sonunda sertifikasyon süreci sistem içinde yönetilir. Çalışan bazlı veya toplu sertifika oluşturma ve yazdırma imkanı sunularak sertifikalar mevzuata uygun formatta hazırlanır. İmza föyleri ve eğitim çıktıları sistem tarafından oluşturulan PDF dokümanlar olarak üretilir. Eğitim akışı; konu ağacı yapısı, eğitim planlama modülü, imza föyü oluşturma ve raporlama araçları ile birlikte, iş güvenliği uzmanının eğitim süreçlerini kontrol altında tutmasını sağlayan bütünleşik bir yapıya dönüşür.</p><ul><li>Mevzuata uyumlu ve kişiselleştirilebilir eğitim konu ağacı</li><li>Dakika bazlı planlama, otomatik takip ve tekrar eğitim uyarıları</li><li>Sertifika, imza föyü ve PDF çıktılarla uçtan uca eğitim yönetimi</li></ul></article>
-                    <article class="feature"><div class="feature__icon">06</div><h3>İSG kurul, gündem ve tutanak yönetimi</h3><p>Kurul üyeleri, gündem yönetimi, toplantı tutanakları ve karar süreçleri uçtan uca dijital olarak yönetilir. Saha tespitlerinden tek tuşla gündem oluşturma, karar takibi ve güçlü arşiv yapısı ile denetimlere hazır eksiksiz dokümantasyon sağlar.</p><ul><li>Kurul üyeleri ve toplantı katılım yönetimi</li><li>Saha tespitinden tek tuşla gündem oluşturma</li><li>Karar takibi, tutanak arşivi ve denetime hazır çıktılar</li></ul></article>
-                    <article class="feature"><div class="feature__icon">07</div><h3>KKD risk değerlendirmesi, zimmet ve stok yönetimi</h3><p>Uzmandroid'in KKD modülü, yalnızca çalışanlara verilen ekipmanı kaydeden basit bir zimmet ekranı değildir. İş tanımı, riskler, önerilen KKD türleri, standart bilgisi, kullanım zorunluluğu, ünvan-görev eşleşmesi, stok takibi ve çalışan zimmeti aynı veri zincirinde birbirini besler.</p><p>Bir iş için riskler ve bu risklere karşı gerekli KKD'ler tanımlandığında, o iş bir ünvana veya göreve atandığında sistem ilgili KKD listesini otomatik üretir. Aynı KKD birden fazla işten gelse bile tekilleştirilir; çalışanın ünvanına göre zimmet ekranında ihtiyaç duyulan KKD'ler hazır ve izlenebilir biçimde görünür.</p><p>Bu yapı; ISO 45001'in risk temelli düşünme, operasyonel kontrol, kayıtların izlenebilirliği ve sürekli iyileştirme yaklaşımını destekleyen güçlü bir dokümantasyon zemini oluşturur. Böylece KKD süreci, kişisel hafızaya veya dağınık Excel listelerine bağlı kalmadan denetime hazır kanıt üreten bütünleşik bir sisteme dönüşür.</p><ul><li>İş ve risk bazlı KKD önerileri</li><li>Ünvan ve göreve göre otomatik KKD listesi</li><li>Çalışan zimmetinde otomatik gereksinim görünümü</li><li>Standart, kullanım zorunluluğu, stok, iade ve hurda takibi</li><li>Yıllık tüketim, maliyet ve kritik stok planlaması</li></ul></article>
+                    <article class="feature"><div class="feature__icon">06</div><h3>İSG kurul, gündem ve tutanak yönetimi</h3><p>Kurul üyeleri, gündem yönetimi, toplantı tutanakları ve karar süreçleri uçtan uca dijital olarak yönetilir. Saha tespitlerinden tek tuşla gündem oluşturma, karar takibi ve güçlü arşiv yapısı ile gözetim ve yönetim takibini güçlendiren dokümantasyon sağlar.</p><ul><li>Kurul üyeleri ve toplantı katılım yönetimi</li><li>Saha tespitinden tek tuşla gündem oluşturma</li><li>Karar takibi, tutanak arşivi ve yönetim çıktıları</li></ul></article>
+                    <article class="feature"><div class="feature__icon">07</div><h3>KKD risk değerlendirmesi, zimmet ve stok yönetimi</h3><p>Uzmandroid'in KKD modülü, yalnızca çalışanlara verilen ekipmanı kaydeden basit bir zimmet ekranı değildir. İş tanımı, riskler, önerilen KKD türleri, standart bilgisi, kullanım zorunluluğu, ünvan-görev eşleşmesi, stok takibi ve çalışan zimmeti aynı veri zincirinde birbirini besler.</p><p>Bir iş için riskler ve bu risklere karşı gerekli KKD'ler tanımlandığında, o iş bir ünvana veya göreve atandığında sistem ilgili KKD listesini otomatik üretir. Aynı KKD birden fazla işten gelse bile tekilleştirilir; çalışanın ünvanına göre zimmet ekranında ihtiyaç duyulan KKD'ler hazır ve izlenebilir biçimde görünür.</p><p>Bu yapı; ISO 45001'in risk temelli düşünme, operasyonel kontrol, kayıtların izlenebilirliği ve sürekli iyileştirme yaklaşımını destekleyen güçlü bir dokümantasyon zemini oluşturur. Böylece KKD süreci, kişisel hafızaya veya dağınık tablolara bağlı kalmadan denetime hazır kanıt üreten bütünleşik bir sisteme dönüşür.</p><ul><li>İş ve risk bazlı KKD önerileri</li><li>Ünvan ve göreve göre otomatik KKD listesi</li><li>Çalışan zimmetinde otomatik gereksinim görünümü</li><li>Standart, kullanım zorunluluğu, stok, iade ve hurda takibi</li><li>Yıllık tüketim, maliyet ve kritik stok planlaması</li></ul></article>
                     <article class="feature"><div class="feature__icon">08</div><h3>Risk, tehlike ve bölüm güvenlik indeksi</h3><p>Tehlike kategorileri, risk değerlendirmesi ve Fine Kinney yaklaşımıyla bölüm bazlı gelişimi ölçülebilir kılar.</p><ul><li>Tehlike havuzu</li><li>Risk değerlendirmesi</li><li>Bölüm bazlı güvenlik görünümü</li></ul></article>
                     <article class="feature"><div class="feature__icon">09</div><h3>Mesleki belge ve talimat takibi</h3><p>Çalışan belgeleri, talimat süreçleri ve standart doküman akışları için daha düzenli bir takip zemini sunar.</p><ul><li>Mesleki belge kayıtları</li><li>Talimat modülü</li><li>Çalışan bazlı arşiv</li></ul></article>
-                    <article class="feature"><div class="feature__icon">10</div><h3>PDF, Excel ve denetim çıktıları</h3><p>Kayıtları uygulama içinde bırakmaz; gerektiğinde yönetim, denetim ve arşiv için paylaşılabilir çıktılara dönüştürür.</p><ul><li>PDF raporlar</li><li>Excel veri aktarımı</li><li>Sertifika ve zimmet çıktıları</li></ul></article>
-                    <article class="feature"><div class="feature__icon">11</div><h3>MySQL, yedekleme ve ortak sunucu</h3><p>Verileri MySQL üzerinde tutarak tek bilgisayar, ortak sunucu ve çok kullanıcılı çalışma senaryolarına zemin hazırlar.</p><ul><li>İlk kurulum desteği</li><li>SQL yedek alma</li><li>Ortak sunucuya taşıma akışı</li></ul></article>
-                    <article class="feature"><div class="feature__icon">12</div><h3>Lisans, deneme ve çevrimdışı kullanım</h3><p>6 aylık deneme lisansı, Firebase doğrulama ve özel durumlar için çevrimdışı lisans yaklaşımıyla sürdürülebilir kullanım modeli sunar.</p><ul><li>6 ay ücretsiz deneme</li><li>Offline lisans dosyası</li><li>Kullanıcı hakkı yönetimi</li></ul></article>
                 </div>
             </div>
         </section>
@@ -620,10 +633,9 @@
                 <div class="module-grid">
                     <article class="module-card module-card--wide">
     <h3>KKD Risk Değerlendirmesi ve Otomatik Zimmet Altyapısı</h3>
-    <p>Sahada KKD süreçlerinde en büyük eksikliklerden biri, listelerin çoğu zaman hazır şablonlarla belirlenmesi ve yapılan işe özgü risklerle yeterince ilişkilendirilmemesidir. Uzmandroid bu boşluğu, iş tanımı ve risk mantığından beslenen bütünleşik bir KKD karar destek sistemiyle kapatır.</p>
-    <p>Sistemde iş tanımları oluşturulur, her işin riskleri belirlenir ve bu risklere karşı gerekli KKD türleri, standart bilgileri ve kullanım zorunluluğu tanımlanır. Daha sonra bir ünvanın veya görevin hangi işleri yaptığı seçildiğinde, Uzmandroid o ünvan için gerekli KKD listesini otomatik olarak üretir. Aynı KKD birden fazla işten gelse bile tekrar yazılmaz; tek, okunabilir ve savunulabilir bir ihtiyaç listesi oluşur.</p>
-    <p>Bu liste doğrudan çalışan zimmetlerine, stok yönetimine, iade-hurda süreçlerine ve raporlamaya bağlanır. Böylece KKD; depo kaydı, zimmet formu ve risk değerlendirmesi arasında kopuk duran bir evrak olmaktan çıkar; işyerinin gerçek risklerinden beslenen yaşayan bir yönetim sistemine dönüşür.</p>
-    <p>ISO 45001 açısından bakıldığında bu yapı; risklerin belirlenmesi, operasyonel kontrollerin planlanması, uygunluk yükümlülüklerinin izlenebilirliği, dokümante bilginin korunması ve sürekli iyileştirme yaklaşımı için güçlü bir kanıt altyapısı sunar. Uzmandroid bu anlamda belgelendirme iddiası taşımadan, standardın beklediği yönetim disiplinini sahada uygulanabilir hale getiren pratik bir çalışma zemini sağlar.</p>
+    <p>Uzmandroid, KKD süreçlerini hazır şablonlardan çıkarıp işin gerçek riskleriyle ilişkilendirir. Sistem; yapılan işe, belirlenen risklere ve gerekli koruyucu donanımlara göre otomatik KKD ihtiyaç listeleri oluşturur.</p>
+    <p>Oluşturulan bu yapı; zimmet, stok, iade-hurda ve raporlama süreçleriyle entegre çalışır. Böylece KKD yönetimi sadece evrak takibi olmaktan çıkar, işyerinin gerçek risklerine dayanan sürdürülebilir bir güvenlik sistemine dönüşür.</p>
+    <p>ISO 45001 yaklaşımına uygun şekilde; izlenebilir, düzenli ve sahada uygulanabilir bir yönetim altyapısı sunar.</p>
     <div class="module-card__tags"><span>Risk tabanlı KKD</span><span>Otomatik zimmet</span><span>Ünvan-görev eşleşmesi</span><span>ISO 45001 uyum mantığı</span><span>Stok ve maliyet takibi</span></div>
 </article>
                     <article class="module-card">
@@ -633,30 +645,6 @@
                         <p>Seyir Defteri; günlük notlar, planlanan ve gerçekleşen İSG faaliyet kayıtları, hatırlatmalar, takip görevleri, yıllık plan entegrasyonu ve tarih bazlı PDF raporlama gibi unsurları tek merkezde toplar. Böylece günlük operasyonlar ile yıllık İSG planı arasında kopukluk oluşmaz; süreç sürekli ve izlenebilir hale gelir.</p>
                         <div class="module-card__tags"><span>Faaliyet ağacı</span><span>Günlük notlar</span><span>Yıllık plan</span><span>Tarih bazlı PDF rapor</span></div>
                     </article>
-                    <article class="module-card">
-                        <h3>Kurulum ve veri güvenliği yaklaşımı</h3>
-                        <p>Portable kullanım, MySQL tabanlı veri yapısı, yerel veya ortak sunucu bağlantısı, SQL yedekleme ve lisans altyapısı ile uygulama kişisel kullanım kadar kurumsal kullanıma da hazırlanır.</p>
-                        <div class="module-card__tags"><span>Portable</span><span>MySQL</span><span>Yedekleme</span><span>Lisans</span></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="shell">
-                <div class="section__head">
-                    <div>
-                        <span class="eyebrow">Çalışma akışı</span>
-                        <h2>Sahadan çıktıya uzanan net bir operasyon zinciri</h2>
-                    </div>
-                    <p>Uzmandroid’in güçlü yanı, ekranları tek tek düşünmek yerine kurulumdan ilk kayda, sahadan çıktıya ve yedeklemeye kadar tüm süreci birbirine bağlı bir yapı olarak kurgulamasıdır.</p>
-                </div>
-
-                <div class="workflow">
-                    <article class="workflow__item"><div class="workflow__step">Adım 1</div><h3>Kurulum</h3><p>Portable paket çalıştırılır; veriler bu bilgisayarda mı yoksa ortak sunucuda mı tutulacak seçilir.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 2</div><h3>Temel kayıtlar</h3><p>İşyeri, bölüm, unvan, çalışan ve ilk yönetici bilgileriyle sistemin omurgası oluşturulur.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 3</div><h3>Operasyon</h3><p>Saha gözetimi, eğitim, kurul, KKD risk değerlendirmesi, zimmet, stok, faaliyet ve kaza kayıtları aynı düzen içinde yönetilir.</p></article>
-                    <article class="workflow__item"><div class="workflow__step">Adım 4</div><h3>Rapor ve yedek</h3><p>PDF, Excel ve SQL yedek akışlarıyla kayıtlar denetime, yönetime ve arşive hazır hale getirilir.</p></article>
                 </div>
             </div>
         </section>
@@ -671,41 +659,14 @@
                         <li>Gerçek saha pratiğinden beslenen ekran mantığı</li>
                         <li>Görsel destekli uygunsuzluk ve kapatma düzeni</li>
                         <li>Yönetim sunumlarına uygun çıktı kalitesi</li>
-                        <li>MySQL tabanlı yerel ve ortak sunucu kullanım yaklaşımı</li>
                         <li>Yeni uzmanlar için rehber niteliğinde düzen</li>
                     </ul>
                 </div>
 
                 <div class="highlight__quote">
-                    <div class="quote-card"><strong>Dağınık kayıtlar yerine tek akış</strong><p>Excel, mesajlaşma ve farklı klasörlere yayılan saha bilgisini bir merkezde toplar.</p></div>
+                    <div class="quote-card"><strong>Dağınık kayıtlar yerine tek akış</strong><p>Mesajlaşma, not ve farklı klasörlere yayılan saha bilgisini bir merkezde toplar.</p></div>
                     <div class="quote-card"><strong>Ölçülebilir bölüm güvenliği</strong><p>Bölüm Güvenlik İndeksi yaklaşımı, Fine Kinney ile değerlendirilen tehlikeleri puanlayarak hangi bölümün ne ölçüde geliştiğini somut biçimde izlemeyi mümkün kılar.</p></div>
-                    <div class="quote-card"><strong>İnternete bağımlı olmayan çalışma</strong><p>Uygulama MySQL veritabanı ile çalışır; lisans ve güncelleme dışında temel kayıt akışı yerel veya ortak sunucu üzerinde sürdürülebilir.</p></div>
                     <div class="quote-card"><strong>KKD sürecinde denetime hazır iz</strong><p>İşin riski, önerilen KKD, standart bilgisi, kullanım zorunluluğu ve çalışan zimmeti birbirine bağlı ilerlediği için süreç ISO 45001 yönetim mantığına uygun biçimde izlenebilir hale gelir.</p></div>
-                </div>
-            </div>
-        </section>
-        <section class="section" id="lisans-modeli">
-            <div class="shell">
-                <div class="section__head">
-                    <div>
-                        <span class="eyebrow">Lisans yaklaşımı</span>
-                        <h2>6 ay ücretsiz deneme ve sürdürülebilir kullanım dengesi</h2>
-                    </div>
-                    <p>Uzmandroid'in lisans yaklaşımı, kullanıcıya gerçek faydayı deneyimletmeyi ve aynı zamanda uzun vadede sürdürülebilir bir geliştirme modelini birlikte korumayı hedefler.</p>
-                </div>
-
-                <div class="module-grid">
-                    <article class="module-card">
-                        <h3>Deneme lisansı ve mesleki dayanışma yaklaşımı</h3>
-                        <p>Uzmandroid için 6 ay ücretsiz deneme lisansı sunulmaktadır. Bu yaklaşım, sistemin sahadaki gerçek ihtiyaçlara ne kadar karşılık verdiğini kullanıcıların doğrudan deneyimleyebilmesi amacıyla tasarlanmıştır.</p>
-                        <p>Bu süreç aynı zamanda ticari bir öncelikten ziyade, meslektaş dayanışmasını ve iş güvenliği alanına katkıyı esas alan bir yaklaşımdır. Amaç, kullanıcıların sistemi kendi çalışma düzenlerine entegre ederek gerçek faydayı deneyimlemesidir.</p>
-                        <p>Uzmandroid, erişilebilir ve sürdürülebilir bir yapı hedefler. Bu doğrultuda ücretlendirme politikası, meslektaşların kullanımını desteklemeyi esas alan, kullanıcıları zorlamayan, makul ve ulaşılabilir seviyelerde tutulacak şekilde planlanmaktadır.</p>
-                    </article>
-                    <article class="module-card">
-                        <h3>Veri korunumu ve adil kullanım dengesi</h3>
-                        <p>Deneme lisansı süresi sonunda sistem kullanımı devam edecek şekilde yapılandırılmıştır. Mevcut veriler korunarak saha gözetimi, çalışan takibi ve temel raporlama süreçleri kesintisiz olarak sürdürülebilir. Böylece kullanıcılar oluşturdukları iş akışını kaybetmeden çalışmalarına devam edebilirler.</p>
-                        <p>Bununla birlikte, sürdürülebilirlik ve adil kullanım ilkesi kapsamında bazı ileri seviye özelliklerde kısıtlama uygulanabilir. Bu yaklaşım, sistemin geliştirilmesi ve emeğin korunması açısından dengeli bir kullanım modeli oluşturmayı amaçlamaktadır.</p>
-                    </article>
                 </div>
             </div>
         </section>
@@ -728,13 +689,8 @@
                     </article>
                     <article class="module-card">
                         <h3>Dosya ve veri akış sınırları</h3>
-                        <p>Uygulama, sizin seçmediğiniz yerel dosyaları otomatik olarak taramaz veya rastgele dışa veri gönderimi yapmaz. Excel/PDF gibi işlemler, kullanıcının başlattığı ve kontrol ettiği adımlar üzerinden ilerler.</p>
+                        <p>Uygulama, sizin seçmediğiniz yerel dosyaları otomatik olarak taramaz veya rastgele dışa veri gönderimi yapmaz. PDF ve PowerPoint gibi çıktı işlemleri, kullanıcının başlattığı ve kontrol ettiği adımlar üzerinden ilerler.</p>
                         <p>İnternet üzerinden iletişim sadece kullanıcının onay verdiği işlemlerde devreye girer: iletişim, hata bildirimi, öneriler ve şifre sıfırlama adımları gibi. Operasyon verilerinizin temel kayıt akışı yerel düzende devam eder.</p>
-                    </article>
-                    <article class="module-card">
-                        <h3>Yedekleme ve veri sorumluluğu</h3>
-                        <p>Uzmandroid, operasyon verilerinize doğrudan erişim sağlamadığı için sizin adınıza merkezi bir yedek tutmaz. Bu nedenle veritabanı yedekleme sorumluluğu kullanıcıya aittir.</p>
-                        <p>Kullanıcının veritabanı herhangi bir nedenle kaybolur veya zarar görürse, sistem tarafından otomatik olarak eski verinin geri getirilmesi ya da yeni bir yedek dosyasının sağlanması mümkün değildir. Düzenli yedek alma, veri sürekliliği için kritik önemdedir.</p>
                     </article>
                 </div>
             </div>
@@ -745,7 +701,7 @@
                 <div>
                     <span class="eyebrow">Deneyin ve geri bildirim verin</span>
                     <h2>Uzmandroid’i indirip kendi İSG akışınızda test edin</h2>
-                    <p>Son sürümü indirmek için bu sayfadaki butona tıklamanız yeterlidir. Uygulama bilgisayarınıza kurulur, masaüstü kısayolu oluşturur ve yeni sürümler yayınlandığında açılışta güncelleme kontrolü yapar. KKD risk değerlendirmesi, otomatik zimmet, saha gözetimi, eğitim, kurul ve raporlama akışlarını kendi İSG düzeninizde test edebilirsiniz. İsterseniz portable paketi GitHub Releases üzerinden alternatif olarak manuel indirebilirsiniz.</p>
+                    <p>Son sürümü indirmek için bu sayfadaki butona tıklamanız yeterlidir. Uygulama bilgisayarınıza kurulur, masaüstü kısayolu oluşturur ve yeni sürümler yayınlandığında açılışta güncelleme kontrolü yapar. Saha gözetimi, uygunsuzluk takibi, düzeltici faaliyetler, eğitim, kurul, kaza analizi, KKD risk değerlendirmesi, otomatik zimmet, iş ekipmanları ve raporlama akışlarını kendi İSG düzeninizde test edebilirsiniz. İsterseniz portable paketi GitHub Releases üzerinden alternatif olarak manuel indirebilirsiniz.</p>
                 </div>
                 <div class="contact__actions">
                     <a class="button button--primary" href="/clickonce/Uzmandroid.application">Son sürümü indir</a>
