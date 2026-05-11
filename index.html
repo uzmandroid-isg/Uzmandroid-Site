@@ -172,17 +172,18 @@
         }
 
         .identity-card__media--logo {
-            padding: 42px;
+            padding: 5px;
             background:
                 radial-gradient(circle at 50% 42%, rgba(255,255,255,0.13), rgba(255,255,255,0.03) 66%),
                 linear-gradient(180deg, rgba(20, 36, 58, 0.98), rgba(17, 32, 51, 0.96));
         }
 
         .identity-card__media--logo img {
-            width: min(74%, 360px);
-            max-height: 250px;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            max-height: none;
             object-fit: contain;
+            border-radius: 24px;
             filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.24));
         }
 
@@ -590,37 +591,13 @@
                     <article class="feature feature--wide"><div class="feature__icon">04</div><h3>İş kazası kayıt ve analiz süreçleri</h3><p>İş kazası sonrası kayıt, arşivleme, istatistik oluşturma ve kök neden analizlerini sistematik ve bütünleşik bir yapıya taşır. Uzmandroid'in en güçlü yönlerinden biri, iş kazası bildirim ve kayıt yapısının SGK sistemindeki kategori ve sınıflandırmalarla uyumlu kurgulanmasıdır. Bu sayede girilen veriler, sonradan manuel düzeltme ihtiyacını azaltan daha tutarlı bir raporlama zemini oluşturur.</p><ul><li>SGK uyumlu kaza kategori yapısı</li><li>5 Neden ve Balık Kılçığı (Ishikawa) analizi</li><li>Kaza ön kayıt, arşiv ve istatistik bütünlüğü</li></ul></article>
                     <article class="feature feature--wide"><div class="feature__icon">05</div><h3>Eğitim, sertifika ve imza föyü yönetimi</h3><p>İSG eğitim süreçlerini; planlamadan katılıma, ölçümlemeden sertifikalandırmaya kadar uçtan uca dijital olarak yönetir. Sistem, güncel İSG eğitim mevzuatına uygun şekilde temel eğitim, yenileme eğitimleri ve özel eğitim başlıklarını destekler. Eğitim içerikleri yalnızca sabit bir yapıdan ibaret değildir; kullanıcı, işyerine veya işe özgü risklere göre kendi eğitim konu ağacını oluşturabilir, mevcut konuları düzenleyebilir ve kategoriler halinde kendi sistematiğini kurabilir.</p><p>Bu yaklaşım, her iş güvenliği uzmanının kendi çalışma tarzını ve saha deneyimini yansıtabileceği kişiselleştirilebilir bir eğitim yapısı oluşturur. Böylece sistem, herkeste aynı şekilde çalışan monoton bir yapı olmaktan çıkar; her uzmanın kendi yöntemine göre şekillenen karakteristik bir platform haline gelir. Eğitim içerikleri ayrıca ders süreleri ve dakika bazlı konu dağılımları ile yapılandırılabilir; böylece mevzuata uyumlu ve ölçülebilir bir eğitim planı oluşturulur.</p><p>Çalışanların eğitim durumları bireysel olarak takip edilir; hangi eğitimleri aldığı, hangi konularda eksik olduğu ve hangi sürelerin tamamlanmadığı sistem üzerinden net şekilde izlenebilir. Otomatik uyarı ve takip mekanizması sayesinde yaklaşan tekrar eğitimleri, eksik kalan konular ve yenilenmesi gereken eğitimler görünür hale getirilir.</p><p>Eğitim sonunda sertifikasyon süreci sistem içinde yönetilir. Çalışan bazlı veya toplu sertifika oluşturma ve yazdırma imkanı sunularak sertifikalar mevzuata uygun formatta hazırlanır. İmza föyleri ve eğitim çıktıları sistem tarafından oluşturulan PDF dokümanlar olarak üretilir. Eğitim akışı; konu ağacı yapısı, eğitim planlama modülü, imza föyü oluşturma ve raporlama araçları ile birlikte, iş güvenliği uzmanının eğitim süreçlerini kontrol altında tutmasını sağlayan bütünleşik bir yapıya dönüşür.</p><ul><li>Mevzuata uyumlu ve kişiselleştirilebilir eğitim konu ağacı</li><li>Dakika bazlı planlama, otomatik takip ve tekrar eğitim uyarıları</li><li>Sertifika, imza föyü ve PDF çıktılarla uçtan uca eğitim yönetimi</li></ul></article>
                     <article class="feature"><div class="feature__icon">06</div><h3>İSG kurul, gündem ve tutanak yönetimi</h3><p>Kurul üyeleri, gündem yönetimi, toplantı tutanakları ve karar süreçleri uçtan uca dijital olarak yönetilir. Saha tespitlerinden tek tuşla gündem oluşturma, karar takibi ve güçlü arşiv yapısı ile gözetim ve yönetim takibini güçlendiren dokümantasyon sağlar.</p><ul><li>Kurul üyeleri ve toplantı katılım yönetimi</li><li>Saha tespitinden tek tuşla gündem oluşturma</li><li>Karar takibi, tutanak arşivi ve yönetim çıktıları</li></ul></article>
-                    <article class="feature"><div class="feature__icon">07</div><h3>KKD risk değerlendirmesi, zimmet ve stok yönetimi</h3><p>Uzmandroid'in KKD modülü, yalnızca çalışanlara verilen ekipmanı kaydeden basit bir zimmet ekranı değildir. İş tanımı, riskler, önerilen KKD türleri, standart bilgisi, kullanım zorunluluğu, ünvan-görev eşleşmesi, stok takibi ve çalışan zimmeti aynı veri zincirinde birbirini besler.</p><p>Bir iş için riskler ve bu risklere karşı gerekli KKD'ler tanımlandığında, o iş bir ünvana veya göreve atandığında sistem ilgili KKD listesini otomatik üretir. Aynı KKD birden fazla işten gelse bile tekilleştirilir; çalışanın ünvanına göre zimmet ekranında ihtiyaç duyulan KKD'ler hazır ve izlenebilir biçimde görünür.</p><p>Bu yapı; ISO 45001'in risk temelli düşünme, operasyonel kontrol, kayıtların izlenebilirliği ve sürekli iyileştirme yaklaşımını destekleyen güçlü bir dokümantasyon zemini oluşturur. Böylece KKD süreci, kişisel hafızaya veya dağınık tablolara bağlı kalmadan denetime hazır kanıt üreten bütünleşik bir sisteme dönüşür.</p><ul><li>İş ve risk bazlı KKD önerileri</li><li>Ünvan ve göreve göre otomatik KKD listesi</li><li>Çalışan zimmetinde otomatik gereksinim görünümü</li><li>Standart, kullanım zorunluluğu, stok, iade ve hurda takibi</li><li>Yıllık tüketim, maliyet ve kritik stok planlaması</li></ul></article>
+                    <article class="feature"><div class="feature__icon">07</div><h3>KKD risk değerlendirmesi, zimmet ve stok yönetimi</h3><p>Uzmandroid KKD modülü; risk değerlendirmesi, zimmet ve stok süreçlerini tek bir yapı altında birleştirir. İş tanımlarına göre gerekli KKD’ler otomatik belirlenir, ünvan ve görevlere göre çalışan ihtiyaç listeleri oluşturulur.</p><p>Sistem; standart bilgisi, kullanım zorunluluğu, stok, iade-hurda ve tüketim takibini birlikte yöneterek ISO 45001’in risk temelli ve izlenebilir yönetim yaklaşımını destekler. Böylece KKD süreçleri dağınık tablolar yerine denetime hazır, sürdürülebilir ve bütünleşik bir yapıya dönüşür.</p></article>
                     <article class="feature"><div class="feature__icon">08</div><h3>Risk, tehlike ve bölüm güvenlik indeksi</h3><p>Tehlike kategorileri, risk değerlendirmesi ve Fine Kinney yaklaşımıyla bölüm bazlı gelişimi ölçülebilir kılar.</p><ul><li>Tehlike havuzu</li><li>Risk değerlendirmesi</li><li>Bölüm bazlı güvenlik görünümü</li></ul></article>
                     <article class="feature"><div class="feature__icon">09</div><h3>Mesleki belge ve talimat takibi</h3><p>Çalışan belgeleri, talimat süreçleri ve standart doküman akışları için daha düzenli bir takip zemini sunar.</p><ul><li>Mesleki belge kayıtları</li><li>Talimat modülü</li><li>Çalışan bazlı arşiv</li></ul></article>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="kkd-sistemi">
-            <div class="shell kkd-system">
-                <span class="eyebrow">KKD sistemi</span>
-                <div class="section__head">
-                    <div>
-                        <h2>KKD risk değerlendirmesinden zimmete kadar tek zincirde çalışır</h2>
-                    </div>
-                    <p>Uzmandroid'de KKD yönetimi ayrı duran bir depo listesi değildir. İşin riski, ünvanın yaptığı görevler, önerilen KKD standardı, kullanım zorunluluğu, çalışan zimmeti ve stok hareketi aynı omurgaya bağlanır.</p>
-                </div>
-                <p class="kkd-system__lead">Bu yaklaşım, iş güvenliği uzmanının "bu çalışana hangi KKD verilmeli?" sorusunu kişisel ezbere bırakmaz. Sistem önce işin riskini ve gerekli koruyucuyu tanımlar, sonra ünvan/görev atamasından çalışana kadar otomatik öneri üretir. Sonuç; daha hızlı zimmet, daha tutarlı kayıt, daha kolay denetim savunması ve yönetim için daha anlaşılır KKD maliyet görünümüdür.</p>
-                <div class="kkd-flow">
-                    <div class="kkd-flow__step"><strong>01</strong><span>İş tanımı</span></div>
-                    <div class="kkd-flow__step"><strong>02</strong><span>Risk ve risk düzeyi</span></div>
-                    <div class="kkd-flow__step"><strong>03</strong><span>KKD türü, standart ve zorunluluk</span></div>
-                    <div class="kkd-flow__step"><strong>04</strong><span>Ünvan ve göreve göre otomatik liste</span></div>
-                    <div class="kkd-flow__step"><strong>05</strong><span>Çalışan zimmeti, stok ve rapor</span></div>
-                </div>
-                <div class="kkd-system__grid">
-                    <article class="kkd-system__mini"><h3>Tekilleştirilmiş KKD listesi</h3><p>Aynı KKD farklı işlerden gelse bile sistem tekrarları ayıklar ve ünvan için sade, uygulanabilir bir zorunlu KKD listesi üretir.</p></article>
-                    <article class="kkd-system__mini"><h3>Standart ve kullanım zorunluluğu</h3><p>KKD türünün yanında standart bilgisi ve kullanım zorunluluğu tutulur; böylece zimmet sadece isim listesi değil, teknik gerekçesi olan bir kayıt haline gelir.</p></article>
-                    <article class="kkd-system__mini"><h3>ISO 45001 yönetim mantığı</h3><p>Risk temelli karar, operasyonel kontrol, dokümante bilgi ve izlenebilir kayıt yaklaşımı desteklenir; denetimlerde açıklanabilir bir KKD süreci oluşur.</p></article>
-                </div>
-            </div>
-        </section>
         <section class="section" id="kapsam">
             <div class="shell">
                 <div class="section__head">
@@ -633,13 +610,6 @@
 
                 <div class="module-grid">
                     <article class="module-card module-card--wide">
-    <h3>KKD Risk Değerlendirmesi ve Otomatik Zimmet Altyapısı</h3>
-    <p>Uzmandroid, KKD süreçlerini hazır şablonlardan çıkarıp işin gerçek riskleriyle ilişkilendirir. Sistem; yapılan işe, belirlenen risklere ve gerekli koruyucu donanımlara göre otomatik KKD ihtiyaç listeleri oluşturur.</p>
-    <p>Oluşturulan bu yapı; zimmet, stok, iade-hurda ve raporlama süreçleriyle entegre çalışır. Böylece KKD yönetimi sadece evrak takibi olmaktan çıkar, işyerinin gerçek risklerine dayanan sürdürülebilir bir güvenlik sistemine dönüşür.</p>
-    <p>ISO 45001 yaklaşımına uygun şekilde; izlenebilir, düzenli ve sahada uygulanabilir bir yönetim altyapısı sunar.</p>
-    <div class="module-card__tags"><span>Risk tabanlı KKD</span><span>Otomatik zimmet</span><span>Ünvan-görev eşleşmesi</span><span>ISO 45001 uyum mantığı</span><span>Stok ve maliyet takibi</span></div>
-</article>
-                    <article class="module-card">
                         <h3>İş Güvenliği Profesyonelinin Seyir Defteri</h3>
                         <p>Uzmandroid içerisinde yer alan bu modül, iş güvenliği uzmanlarının günlük saha faaliyetlerini planlayabileceği, takip edebileceği ve not alabileceği bütünleşik bir çalışma alanıdır. Klasik bir not defteri yaklaşımından farklı olarak düzenlenebilir faaliyet ağacı motoru ile çalışır.</p>
                         <p>Kullanıcı, kendi işyerine ve çalışma modeline göre yıllık planlarını oluşturabilir, görevleri kategorize edebilir ve saha faaliyetlerini sistematik bir akışa dönüştürebilir. Sistem de bu yapıyı temel alarak yıllık değerlendirme planlarını destekleyen otomatik faaliyet çizelgesi üretir.</p>
