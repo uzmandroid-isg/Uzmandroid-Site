@@ -1,0 +1,17 @@
+/clickonce/*.application
+  Content-Type: application/x-ms-application
+
+/clickonce/**/*.manifest
+  Content-Type: application/x-ms-manifest
+
+/clickonce/**/*.deploy
+  Content-Type: application/octet-stream
+
+/beta/clickonce/*.application
+  Content-Type: application/x-ms-application
+
+/beta/clickonce/**/*.manifest
+  Content-Type: application/x-ms-manifest
+
+/beta/clickonce/**/*.deploy
+  Content-Type: application/octet-stream
